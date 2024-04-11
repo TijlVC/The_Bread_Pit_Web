@@ -1,0 +1,47 @@
+﻿@model The_Bread_Pit.Models.Produkt
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    string action = Model.ProductID > 0 ? "Edit" : "Add";
+    ViewBag.Title = $"Admin Produkt {action}";
+}
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h1>Produkt @(action)</h1>
+
+<form asp-area="Admin" asp-controller="Produkt" asp-action="AddEdit" method="post">
+    @if (Model.ProductID > 0)
+    {
+        <input type="hidden" asp-for="ProductID" />
+    }
+
+    <div class="form-group">
+        <label asp-for="ProduktNaam"></label>
+        <input asp-for="ProduktNaam" class="form-control" />
+        <span asp-validation-for="ProduktNaam" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prijs"></label>
+        <input asp-for="Prijs" class="form-control" />
+        <span asp-validation-for="Prijs" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID">Categorie</label>
+        <select asp-for="CategoryID" asp-items="@(new SelectList(ViewBag.Categorieen, "CategoryID", "CategorieNaam"))" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Omschrijving"></label>
+        <textarea asp-for="Omschrijving" class="form-control"></textarea>
+        <span asp-validation-for="Omschrijving" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+</form>
+

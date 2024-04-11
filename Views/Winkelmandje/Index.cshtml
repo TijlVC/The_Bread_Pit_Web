@@ -1,0 +1,50 @@
+﻿@model List<The_Bread_Pit.Models.WinkelmandjeItem>
+
+<h2>Mijn Winkelmandje</h2>
+
+@if (Model.Count == 0)
+{
+    <p>Uw winkelmandje is leeg.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Productnaam</th>
+                <th>Aantal</th>
+                <th>Prijs per stuk</th>
+                <th>Totale prijs</th>
+                <th>Actie</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Produkt.ProduktNaam</td>
+                    <td>
+                        <form method="post" action="/Winkelmandje/UpdateQuantity" class="quantity-form">
+                            <input type="hidden" name="action" value="minus" />
+                            <input type="hidden" name="itemId" value="@item.WinkelmandjeItemID" />
+                            <button type="submit" class="btn btn-custom btn-sm">-</button>
+                        </form>
+                        @item.Aantal
+                        <form method="post" action="/Winkelmandje/UpdateQuantity" class="quantity-form">
+                            <input type="hidden" name="action" value="plus" />
+                            <input type="hidden" name="itemId" value="@item.WinkelmandjeItemID" />
+                            <button type="submit" class="btn btn-custom btn-sm">+</button>
+                        </form>
+                    </td>
+                    <td>@item.Produkt.Prijs.ToString("C")</td>
+                    <td>@((item.Aantal * item.Produkt.Prijs).ToString("C"))</td>
+                    <td>
+                        <form method="post" asp-action="Verwijder" asp-controller="Winkelmandje" asp-route-itemId="@item.WinkelmandjeItemID">
+                            <button type="submit" class="btn btn-danger">Verwijderen</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

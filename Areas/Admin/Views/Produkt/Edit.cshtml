@@ -1,0 +1,56 @@
+﻿@model The_Bread_Pit.Models.Produkt
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = $"Admin Produkt Bewerken - {Model.ProduktNaam}";
+}
+
+<h1>Produkt Bewerken</h1>
+
+<form asp-area="Admin" asp-controller="Produkt" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ProductID" />
+
+    <div class="form-group">
+        <label asp-for="ProduktNaam"></label>
+        <input asp-for="ProduktNaam" class="form-control" />
+        <span asp-validation-for="ProduktNaam" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Prijs"></label>
+        <input asp-for="Prijs" class="form-control" />
+        <span asp-validation-for="Prijs" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryID">Categorie</label>
+        <select asp-for="CategoryID" asp-items="@(new SelectList(ViewBag.Categorieen, "CategoryID", "CategorieNaam"))" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Omschrijving"></label>
+        <textarea asp-for="Omschrijving" class="form-control"></textarea>
+        <span asp-validation-for="Omschrijving" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Allergieën"></label>
+        <textarea asp-for="Allergieën" class="form-control"></textarea>
+        <span asp-validation-for="Allergieën" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Extra"></label>
+        <textarea asp-for="Extra" class="form-control"></textarea>
+        <span asp-validation-for="Extra" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Opslaan</button>
+
+    <a asp-controller="Produkt" asp-action="List" class="btn btn-outline-primary">Terug</a>
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

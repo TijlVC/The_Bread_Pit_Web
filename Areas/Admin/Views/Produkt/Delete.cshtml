@@ -1,0 +1,20 @@
+﻿@model The_Bread_Pit.Models.Produkt
+
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Produkt verwijderen";
+}
+
+<h1>Weet je zeker dat je het volgende produkt wilt verwijderen?</h1>
+
+<div>
+    <h2>@Model.ProduktNaam</h2>
+    <p>Prijs: @Model.Prijs.ToString("c")</p>
+    <p>Omschrijving: @Model.Omschrijving</p>
+</div>
+
+<form asp-area="Admin" asp-controller="Produkt" asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="ProductID" />
+    <button type="submit" class="btn btn-danger">Verwijderen</button>
+    <a asp-area="Admin" asp-controller="Produkt" asp-action="List" class="btn btn-secondary">Annuleren</a>
+</form>

@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
     string controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? "DefaultController";
     string action = ViewContext.RouteData.Values["action"]?.ToString() ?? "DefaultAction";
 }

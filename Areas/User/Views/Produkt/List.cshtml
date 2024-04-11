@@ -1,0 +1,49 @@
+﻿@model ProduktenLijst
+@{
+    ViewBag.Title = "User Produkt lijst";
+}
+
+<h1>Lijst met onze producten</h1>
+<div class="row">
+    <div class="col-sm-2">
+        <div class="list-group">
+            <a asp-controller="Produkt" asp-action="List" asp-route-id="Alles" class="list-group-item
+            @Model.ActiveCategory("All")">Alles</a>
+            @foreach (Categorie categorie in Model.Categorien)
+            {
+                <a asp-controller="Produkt" asp-action="List" asp-route-id="@categorie.CategoryID"
+                   class="list-group-item">@categorie.CategorieNaam</a>
+            }
+        </div>
+    </div>
+    <div class="col-sm-10">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Naam</th>
+                    <th>Prijs</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var produkt in Model.Produkten)
+                {
+                    <tr>
+                        <td>@produkt.ProduktNaam</td>
+                        <td>@produkt.Prijs.ToString("c")</td>
+                        <td>
+                            <a asp-controller="Produkt" asp-action="Details" asp-route-id="@produkt.ProductID"
+                               asp-route-url="@produkt.Url" class="btn btn-outline-primary">Bekijk details</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Winkelmandje" asp-action="Toevoegen" asp-route-productId="@produkt.ProductID" 
+                            class="btn btn-outline-info">Voeg toe aan winkelmandje</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</br>
+<a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Terug</a>

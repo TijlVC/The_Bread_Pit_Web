@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "_Layout.cshtml";
+    string controller = ViewContext.RouteData.Values["controller"]?.ToString() ?? "DefaultController";
+    string action = ViewContext.RouteData.Values["action"]?.ToString() ?? "DefaultAction";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">The Bread Pit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link
+                               @(controller == "Home" && action == "Index" ? "active" : "")"
+                           asp-controller="Home" asp-action="Index">Home</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link
+                               @(controller == "Home" && action == "About" ? "active" : "")"
+                           asp-controller="Home" asp-action="Index">Over Ons</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link" asp-area="User" asp-controller="Produkt" asp-action="List">User Area</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link"
+                           asp-area="Employee" asp-controller="Home" asp-action="Index">Employee Area</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link"
+                           asp-area="Admin" asp-controller="Produkt" asp-action="List">Admin Area</a>
+                    </li>
+                    <li>
+                        <partial name="_LoginPartial" />
+                    </li>                                      
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>

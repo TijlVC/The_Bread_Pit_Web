@@ -1,0 +1,33 @@
+﻿@model The_Bread_Pit.Models.Produkt
+@{
+    ViewBag.Title = "Produkt Details";
+}
+
+<h1>Produkt Details</h1>
+<div class="row">
+    <div class="col-sm-4">
+@*         <img src="~/Images/@Model.ProduktNaam.Replace(' ', '-') + " .jpg"" alt="@Model.ProduktNaam" class="img-responsive center-block" /> *@
+    </div>
+    <div class="col-sm-8">
+        <h2>@Model.ProduktNaam</h2>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>Prijs:</td>
+                <td>@Model.Prijs.ToString("c")</td>
+            </tr>
+            <tr>
+                <td>Omschrijving:</td>
+                <td>@Model.Omschrijving</td>
+            </tr>
+            <tr>
+                <td>Allergieën:</td>
+                <td>@Model.Allergieën</td>
+            </tr>
+            <tr>
+                <td>Extra:</td>
+                <td>@Model.Extra</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<a asp-controller="Produkt" asp-action="List" class="btn btn-outline-primary">Terug</a>

@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using The_Bread_Pit.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace The_Bread_Pit.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ProduktController : Controller
     {
         private readonly TheBreadPitContext _context;

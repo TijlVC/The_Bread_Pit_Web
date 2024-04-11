@@ -1,0 +1,36 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Registratiebevestiging";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.DisplayConfirmAccountLink)
+{
+    <p>
+        Omdat deze applicatie momenteel geen echte e-mailverzender heeft geconfigureerd, wordt deze stap gesimuleerd.
+        Normaal zou u een e-mail ontvangen met daarin:
+        <a id="confirm-link" href="@Model.EmailConfirmationUrl">Klik hier om uw account te bevestigen</a>.
+    </p>
+    <p>
+        Uw aanvraag om u als gebruiker te registreren is verstuurd.
+        U ontvangt binnenkort een bevestiging hiervan zodra uw account door een beheerder is goedgekeurd.
+    </p>
+}
+else
+{
+    <p>
+        Controleer alstublieft uw e-mail om uw account te bevestigen.
+    </p>
+}
+
+<p>
+    <a asp-controller="Home" asp-action="Index">Terugkeren naar homepagina</a>
+</p>
+<p>
+    <a asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="/">Inloggen</a>
+</p>
+
+
+

@@ -1,6 +1,13 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Admin Home";
 }
 
-<h1>Welcome to the Admin Home</h1>
+<h1>Welkom Administrator</h1>
+
+<div>
+    <a asp-area="Admin" asp-controller="Categorien" asp-action="Index" class="btn btn-primary">Producten Beheer</a>
+    <a asp-area="Admin" asp-controller="BestellingOverzicht" asp-action="OverzichtBestellingen" class="btn btn-secondary">Bestellingen Beheer</a>
+    <a asp-area="Admin" asp-controller="AccountManagement" asp-action="Personeel" class="btn btn-success">Personeel Beheer</a>
+    <a asp-area="Admin" asp-controller="AccountManagement" asp-action="Klanten" class="btn btn-info">Klant Beheer</a>
+</div>
+

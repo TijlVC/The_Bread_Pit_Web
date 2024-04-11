@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Personeel Beheer";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3 style ="padding-top: 30px">Administrators</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 60%;">E-mail</th>
+            <th>Acties</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model.Admins)
+        {
+            <tr>
+                <td>@admin.Email</td>
+                <td>
+                    <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');">
+                        <input type="hidden" name="userId" value="@admin.Id" />
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("WachtwoordReset", "AccountManagement", new { area = "Admin" })" class="btn btn-warning">Fictief Wachtwoord Reset</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Voeg nieuwe administrator toe</h4>
+    <form asp-action="AddUser">
+    <input type="email" name="Email" placeholder="E-mail" required style="width: 30%;"> 
+    <input type="password" name="Password" placeholder="Wachtwoord" required style="width: 20%;">
+        <input type="hidden" name="Role" value="Admin">
+    <button type="submit" class="btn btn-success">Toevoegen</button>
+    </form>
+
+<h3 style="padding-top: 150px">Employees</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 60%;">E-mail</th>
+            <th>Acties</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.Employees)
+        {
+            <tr>
+                <td>@employee.Email</td>
+                <td>
+                    <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');">
+                        <input type="hidden" name="userId" value="@employee.Id" />
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="@Url.Action("PersoneelWachtwoordReset", "AccountManagement", new { area = "Admin" })" class="btn btn-warning">Fictief Wachtwoord Reset</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h4>Voeg nieuwe Employee toe</h4>
+<form asp-action="AddUser">
+    <input type="email" name="Email" placeholder="E-mail" required style="width: 30%">
+    <input type="password" name="Password" placeholder="Wachtwoord" required style="width: 20%">
+    <input type="hidden" name="Role" value="Employee">
+    <button type="submit" class="btn btn-success">Toevoegen</button>
+</form>
+

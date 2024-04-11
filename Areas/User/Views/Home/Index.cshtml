@@ -1,6 +1,70 @@
-﻿
-@{
-    ViewBag.Title = "User Home";
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Welkom bij The Bread Pit!";
 }
 
-<h1>Welcome to the User Home</h1>
+<h1></h1>
+<div class="text-center">
+    <h1 class="display-4">Frisse en Heerlijke Broodjes, Elke Dag!</h1>
+    <h4 class="lead">Ontdek onze lekkere broodjes, zoete lekkernijen en hapjes met een drankje.</h4>
+    <hr class="my-5">
+    <p>Blader door onze selectie en bestel met gemak je favorieten.</p>
+    <a class="btn btn-primary btn-lg" style="width: 20%" asp-controller="Produkt" asp-action="List" role="button"> Bestel hier! </a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/belegde broodjes2.jpg" class="bd-placeholder-img card-img-top" alt="image1">
+            <div class="card-body">
+                <p class="card-text">Lekkere broodjes</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/Soep.jpg" class="bd-placeholder-img card-img-top" alt="image2">
+            <div class="card-body">
+                <p class="card-text">Soep</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/Pasta.jpg" class="bd-placeholder-img card-img-top"  alt="image3">
+            <div class="card-body">
+                <p class="card-text">Pasta</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/zoet-fruit.jpg" class="bd-placeholder-img card-img-top" alt="image4">
+            <div class="card-body">
+                <p class="card-text">Fruit & gebak</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/Dranken.jpg" class="bd-placeholder-img card-img-top" alt="image5">
+            <div class="card-body">
+                <p class="card-text">Dranken</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+            <img src="~/images/Andere.jpg" class="bd-placeholder-img card-img-top" alt="image6">
+            <div class="card-body">
+                <p class="card-text">Andere</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Eventuele scripts die nodig zijn voor de pagina
+    </script>
+}

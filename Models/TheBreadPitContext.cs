@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Areas.User.Models;
 
 namespace The_Bread_Pit.Models
 {
 #nullable disable
-    public class TheBreadPitContext: DbContext
+    public class TheBreadPitContext: IdentityDbContext
     {
         public TheBreadPitContext(DbContextOptions<TheBreadPitContext> options) :base(options) { }
 
@@ -12,6 +13,9 @@ namespace The_Bread_Pit.Models
 
         public DbSet<Categorie> Categorien { get; set; }
 
+        public DbSet<Bestelling> Bestellingen { get; set; }
+
+        public DbSet<BestelItem> BestelItems { get; set; }
         public DbSet<WinkelmandjeItem> WinkelmandjeItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

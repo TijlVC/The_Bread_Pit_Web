@@ -3,7 +3,18 @@
     ViewBag.Title = "User Produkt lijst";
 }
 
-<h1>Lijst met onze producten</h1>
+<h1 class="cent" >WELCOME OP DE BESTELSITE VAN THE BREAD PIT</h1>
+
+<div class="row">
+    <div class ="col text-left"><h4>Hieronder vindt u de lijst met onze producten,<br />
+         welke u kan bestellen.</h4>
+         </div>
+    <div class="col text-right">
+        <a asp-controller="Winkelmandje" asp-action="Index" class="btn btn-success text-white">
+            <i class="fas fa-shopping-cart"></i> Bekijk Winkelmandje
+        </a>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-2">
         <div class="list-group">
@@ -20,15 +31,15 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Naam</th>
+                    <th>Omschrijving</th>
                     <th>Prijs</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var produkt in Model.Produkten)
                 {
-                    <tr>
-                        <td>@produkt.ProduktNaam</td>
+                    <tr>                        
+                        <td>@produkt.Omschrijving</td>
                         <td>@produkt.Prijs.ToString("c")</td>
                         <td>
                             <a asp-controller="Produkt" asp-action="Details" asp-route-id="@produkt.ProductID"
@@ -37,7 +48,6 @@
                         <td>
                             <a asp-controller="Winkelmandje" asp-action="Toevoegen" asp-route-productId="@produkt.ProductID"
                                class="btn btn-outline-info">Voeg toe aan winkelmandje</a>
-
                         </td>
                     </tr>
                 }
@@ -45,5 +55,3 @@
         </table>
     </div>
 </div>
-</br>
-<a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Terug</a>

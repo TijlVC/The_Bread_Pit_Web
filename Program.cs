@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Models;
+using Microsoft.AspNetCore.Identity;
+using The_Bread_Pit.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TheBreadPitContext>(
     options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("TheBreadPitContext")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true) //deze op fasle zetten om bij userregistratie geen bevestiging te moeten doen)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<TheBreadPitContext>();
 
 // Sessie configuratie
 builder.Services.AddSession(options =>
@@ -27,21 +33,23 @@ var app = builder.Build();
 // Middleware voor statische bestanden
 app.UseStaticFiles();
 
-// Middleware voor sessies; belangrijk om dit vóór app.UseRouting() en na app.UseStaticFiles() te plaatsen
+// Middleware voor sessies; belangrijk om dit vï¿½ï¿½r app.UseRouting() en na app.UseStaticFiles() te plaatsen
 app.UseSession();
 
 // Middleware voor routing
 app.UseRouting();
 
 app.UseStatusCodePages();
+app.UseAuthentication();;
 
 // Middleware voor autorisatie
 app.UseAuthorization();
 
 app.MapAreaControllerRoute(
-       name: "Admin",
-          areaName: "Admin",
-             pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+    name: "Admin_area",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Produkt}/{action=List}/{id?}"
+);
 
 app.MapAreaControllerRoute(
     name: "Employee_area",
@@ -59,6 +67,16 @@ app.MapAreaControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}/{url?}");
+
+var scope = app.Services.CreateScope();
+var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+await DbInitializer.InitializeAsync(userManager, roleManager);
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapRazorPages();
+});
 
 app.Run();
 

@@ -1,0 +1,58 @@
+﻿@using The_Bread_Pit.Areas.User.Models
+@model BestellingViewModel
+
+<h2>Overzicht uw Bestelling </h2><br />
+<p>Bestelling nummer <i>@Model.BestellingId</i></p>
+
+
+@if (Model.Items.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Productnaam</th>
+                <th>Aantal</th>
+                <th>Prijs per stuk</th>
+                <th>Subtotaal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.ProductNaam</td>
+                    <td>@item.Aantal</td>
+                    <td>@item.Prijs.ToString("C")</td>
+                    <td>@item.Subtotaal.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Totaal: @Model.TotaalPrijs.ToString("C")</h3>
+    <p>Geplaatst door :  @Model.GebruikerNaam op @Model.BestelDatum.ToString("dd-MM-yyyy")</p>
+}
+else
+{
+    <p>Er zijn geen items in deze bestelling.</p>
+}
+<div class="row">
+    <div class="col text-left">
+        @if (!Model.IsBetaald && !Model.IsGeannuleerd)
+        {
+            <form asp-action="MarkeerAlsBetaald" asp-route-bestellingId="@Model.BestellingId" method="post">
+                <button type="submit" class="btn btn-success">Markeer als betaald</button>
+            </form>
+        }
+    </div>
+    <div class="col text-right">
+        @if (!Model.IsGeannuleerd)
+        {
+            <form asp-action="AnnuleerBestelling" asp-route-bestellingId="@Model.BestellingId" method="post">
+                <button type="submit" class="btn btn-warning">Annuleer Bestelling</button>
+            </form>
+        }
+    </div>
+</div>
+
+

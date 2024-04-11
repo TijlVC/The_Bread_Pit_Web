@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Klant Beheer";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@model The_Bread_Pit.Areas.Admin.Models.UserManagementViewModel
+<h2>Onbevestigde Klanten</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>E-mail</th>
+            <th>Acties</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.UnconfirmedUsers)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="ConfirmUser" method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit" class="btn btn-success">Bevestig gebruiker</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+                        
+
+<h3 style="padding-top: 30px">Klanten</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width: 60%;">E-mail</th>
+            <th>Acties</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Weet je zeker dat je deze gebruiker wilt verwijderen?');">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit" class="btn btn-danger">Verwijder gebruiker</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="@Url.Action("KlantenWachtwoordReset", "AccountManagement", new { area = "Admin" })" class="btn btn-warning">Fictief Wachtwoord Reset</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

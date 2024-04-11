@@ -3,4 +3,13 @@
     ViewBag.Title = "Employee Home";
 }
 
-<h1>Welcome to the Employee Home</h1>
+<h1>Welkom Medewerker</h1>
+<h3>Kies wat je wilt zien</h3>
+
+<div>
+    <a asp-area="Employee" asp-controller="Home" asp-action="Index" class="btn btn-primary">Home</a>
+    <a asp-area="Employee" asp-controller="BestellingOverzicht" asp-action="OpenBestellingen" class="btn btn-secondary">Open Bestellingen</a>
+    <a asp-area="Employee" asp-controller="BestellingOverzicht" asp-action="OverzichtBestellingen" class="btn btn-success">Samenvatting Bestellingen</a>
+    <a asp-area="Employee" asp-controller="BestellingOverzicht" asp-action="AfgerondeBestellingen" class="btn btn-info">Afgeronde Bestellingen</a>
+    <a asp-area="Employee" asp-controller="Produkt" asp-action="List" class="btn btn-warning">Producten</a>
+</div>

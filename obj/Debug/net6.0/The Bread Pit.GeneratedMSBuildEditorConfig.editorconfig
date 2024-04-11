@@ -9,131 +9,251 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = The_Bread_Pit
 build_property.RootNamespace = The_Bread_Pit
-build_property.ProjectDir = C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit zonder autho\
+build_property.ProjectDir = C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit V6\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit zonder autho
+build_property.MSBuildProjectDirectory = C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit V6
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Home/Index.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/AccountManagement/Klanten.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudE1hbmFnZW1lbnRcS2xhbnRlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/AccountManagement/KlantenWachtwoordReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudE1hbmFnZW1lbnRcS2xhbnRlbldhY2h0d29vcmRSZXNldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/AccountManagement/Personeel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudE1hbmFnZW1lbnRcUGVyc29uZWVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/AccountManagement/PersoneelWachtwoordReset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudE1hbmFnZW1lbnRcUGVyc29uZWVsV2FjaHR3b29yZFJlc2V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/AccountManagement/UserApproval.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudE1hbmFnZW1lbnRcVXNlckFwcHJvdmFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/BestellingOverzicht/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmVzdGVsbGluZ092ZXJ6aWNodFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/BestellingOverzicht/OverzichtBestellingen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmVzdGVsbGluZ092ZXJ6aWNodFxPdmVyemljaHRCZXN0ZWxsaW5nZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Produkt/Add.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Produkt/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVrdFxBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Produkt/AddEdit.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Produkt/AddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVrdFxBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Produkt/Delete.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Produkt/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVrdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Produkt/Edit.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Produkt/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVrdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Produkt/List.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Produkt/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVrdFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/Home/Index.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/BestellingOverzicht/AfgerondeBestellingen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQmVzdGVsbGluZ092ZXJ6aWNodFxBZmdlcm9uZGVCZXN0ZWxsaW5nZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/BestellingOverzicht/OpenBestellingen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQmVzdGVsbGluZ092ZXJ6aWNodFxPcGVuQmVzdGVsbGluZ2VuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/BestellingOverzicht/OverzichtBestellingen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcQmVzdGVsbGluZ092ZXJ6aWNodFxPdmVyemljaHRCZXN0ZWxsaW5nZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/Produkt/Details.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/Produkt/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUHJvZHVrdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/Produkt/List.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/Produkt/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcUHJvZHVrdFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcU2hhcmVkXF9FbXBsb3llZUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/_ViewImports.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/Employee/Views/_ViewStart.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Employee/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/Home/Index.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRGVsZXRlUGVyc29uYWxEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcRG93bmxvYWRQZXJzb25hbERhdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Bestelling/BetaaldBevestiging.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xCZXN0ZWxsaW5nXEJldGFhbGRCZXZlc3RpZ2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Bestelling/GeannuleerdBevestiging.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xCZXN0ZWxsaW5nXEdlYW5udWxlZXJkQmV2ZXN0aWdpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Bestelling/LegeBestelling.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xCZXN0ZWxsaW5nXExlZ2VCZXN0ZWxsaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Bestelling/MijnBestellingen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xCZXN0ZWxsaW5nXE1pam5CZXN0ZWxsaW5nZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Bestelling/Overzicht.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xCZXN0ZWxsaW5nXE92ZXJ6aWNodC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/Produkt/Details.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Produkt/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWt0XERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/Produkt/List.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Produkt/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xQcm9kdWt0XExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/Shared/_UserLayout.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Shared/_UserLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xTaGFyZWRcX1VzZXJMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/Winkelmandje/Index.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/Winkelmandje/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xXaW5rZWxtYW5kamVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/_ViewImports.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Areas/User/Views/_ViewStart.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Areas/User/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVXNlclxWaWV3c1xfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/Home/About.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/Home/Index.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/Shared/_MainLayout.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Shared/_MainLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NYWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/_ViewImports.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/_ViewStart.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit zonder autho/Views/Shared/_Layout.cshtml]
+[C:/Electronica - ICT/Visual Studio 2022/Webdevelopment 2 -2024/The Bread Pit/The Bread Pit V6/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-905varyj3j

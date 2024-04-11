@@ -1,0 +1,17 @@
+﻿@model The_Bread_Pit.Areas.Admin.Models.UserApprovalViewModel
+
+<h2>Niet bevestigde gebruikers</h2>
+<ul>
+    @foreach (var user in Model.UnconfirmedUsers)
+    {
+        <li>@user.Email <a asp-action="ConfirmUser" asp-route-id="@user.Id">Bevestig</a></li>
+    }
+</ul>
+
+<h2>Bevestigde gebruikers</h2>
+<ul>
+    @foreach (var user in Model.ConfirmedUsers)
+    {
+        <li>@user.Email</li>
+    }
+</ul>

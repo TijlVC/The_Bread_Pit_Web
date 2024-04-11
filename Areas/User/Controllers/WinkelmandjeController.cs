@@ -4,29 +4,37 @@ using Microsoft.AspNetCore.Http;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Areas.User.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace The_Bread_Pit.Areas.User.Controllers
 {
     [Area("User")]
+    [Authorize(Roles = "User")]
     public class WinkelmandjeController : Controller
     {
         private readonly TheBreadPitContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public WinkelmandjeController(TheBreadPitContext context)
+        public WinkelmandjeController(TheBreadPitContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [Route("[area]/Winkelmandje/Toevoegen/{productId}")]
-        public IActionResult Toevoegen(int productId)
+        public async Task<IActionResult> Toevoegen(int productId)
         {
             var product = _context.Produkten.Find(productId);
             if (product != null)
             {
-                //var sessieId = HttpContext.Session.Id;
-                var sessieId = "0";
+                // Verkrijg de UserId van de huidige ingelogde gebruiker
+                var user = await _userManager.GetUserAsync(User);
+                var userId = user?.Id; // Dit zou de ID van de ingelogde gebruiker moeten zijn
+
+                // Veronderstelt dat de sessieId niet meer nodig is omdat je nu UserId gebruikt
                 var bestaandItem = _context.WinkelmandjeItems
-                    .FirstOrDefault(w => w.Produkt.ProductID == productId && w.SessieId == sessieId);
+                    .FirstOrDefault(w => w.Produkt.ProductID == productId && w.UserId == userId);
 
                 if (bestaandItem == null)
                 {
@@ -34,7 +42,8 @@ namespace The_Bread_Pit.Areas.User.Controllers
                     {
                         Produkt = product,
                         Aantal = 1,
-                        SessieId = sessieId
+                        UserId = userId, // Set de UserId hier
+                        BestellingId = null
                     };
                     _context.WinkelmandjeItems.Add(winkelmandjeItem);
                 }
@@ -42,15 +51,15 @@ namespace The_Bread_Pit.Areas.User.Controllers
                 {
                     bestaandItem.Aantal++;
                 }
-                _context.SaveChanges();
+                await _context.SaveChangesAsync(); // Gebruik await met SaveChangesAsync
             }
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult UpdateQuantity(string action, int itemId)
+        public async Task<IActionResult> UpdateQuantity(string action, int itemId)
         {
-            var item = _context.WinkelmandjeItems.Find(itemId);
+            var item = await _context.WinkelmandjeItems.FindAsync(itemId);
             if (item != null)
             {
                 if (action == "plus")
@@ -58,7 +67,7 @@ namespace The_Bread_Pit.Areas.User.Controllers
                 else if (action == "minus" && item.Aantal > 1)
                     item.Aantal--;
 
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
             return RedirectToAction("Index");
         }
@@ -75,13 +84,15 @@ namespace The_Bread_Pit.Areas.User.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //var sessieId = HttpContext.Session.Id;
-            var sessieId = "0";
+            // Verkrijg de UserId van de huidige ingelogde gebruiker
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user?.Id;
+
             var winkelmandjeItems = _context.WinkelmandjeItems
-                .Include(w => w.Produkt) // toegevoegd
-                .Where(w => w.SessieId == sessieId)
+                .Include(w => w.Produkt)
+                .Where(w => w.UserId == userId) // Gebruik UserId om de items op te halen
                 .ToList();
 
             return View(winkelmandjeItems);

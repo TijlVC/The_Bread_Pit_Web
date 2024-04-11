@@ -1,0 +1,79 @@
+html {
+  font-size: 14px;
+}
+
+
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #fff9e6;
+}
+
+nav, footer {
+    background-color: #f7f5d1;
+}
+
+.quantity-form {
+    display: inline-block;
+     margin-right: 5px;
+    margin-left: 5px;
+}
+
+.quantity-form button {
+    padding: 0px 8px;
+    font-size: 1.1em;
+    vertical-align: middle; /* Aanpassing om de symbolen verticaal te centreren */
+}
+
+.btn-custom {
+    background-color: lightgrey;
+    border-radius: 50px;
+}
+
+
+
+.row {
+    margin-top: 20px; /* Geeft wat ruimte boven de rij */
+}
+
+.col.text-right {
+    text-align: right;
+}
+
+.col.text-left {
+    text-align: left;
+}
+
+.nav-link.btn.btn-outline-dark.text-dark:hover {
+    background-color: #ffd800;
+    color: #fff;
+    
+}
+
+
+
+footer {    
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 20px;
+}

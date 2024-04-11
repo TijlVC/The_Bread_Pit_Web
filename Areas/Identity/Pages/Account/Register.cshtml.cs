@@ -122,6 +122,19 @@ namespace The_Bread_Pit.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
+                    // Toevoeging: de nieuwe gebruiker toevoegen aan de rol 'User'
+                    var addToRoleResult = await _userManager.AddToRoleAsync(user, "User");
+                    if (!addToRoleResult.Succeeded)
+                    {
+                        _logger.LogWarning("User created but not added to role.");
+                        // Optioneel: Voeg fouten toe aan de ModelState en toon ze op de pagina
+                        foreach (var error in addToRoleResult.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, error.Description);
+                        }
+                        // Als je fouten wilt weergeven, moet je waarschijnlijk hier terugkeren naar de pagina.
+                    }
+
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

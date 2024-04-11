@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Areas.Admin.Models;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 [Area("Admin")]
 [Authorize(Roles = "Admin")]
@@ -110,27 +111,39 @@ public class AccountManagementController : Controller
             if (result.Succeeded)
             {
                 // Redirect of toon succesbericht
-                return RedirectToAction(nameof(Personeel));
+                return RedirectToAction(nameof(Klanten));
             }
             else
             {
                 // Toon foutberichten
             }
         }
-        return RedirectToAction(nameof(Personeel));
+        return RedirectToAction(nameof(Klanten));
     }
 
+    [HttpPost]
     public async Task<IActionResult> ConfirmUser(string userId)
     {
         var user = await _userManager.FindByIdAsync(userId);
         if (user == null)
         {
-            return NotFound();
+            return NotFound($"Gebruiker met ID '{userId}' niet gevonden.");
         }
 
-        // Voer bevestigingslogica uit...
+        if (!user.EmailConfirmed)
+        {
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var result = await _userManager.ConfirmEmailAsync(user, token);
 
-        return RedirectToAction("Klanten"); // Of, redirect naar een andere pagina.
+            if (!result.Succeeded)
+            {
+                // Log de fouten of toon ze aan de gebruiker
+                return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            }
+        }
+
+        // Als alles succesvol was, toon dan de bevestigingspagina
+        return View();
     }
 
     public IActionResult PersoneelWachtwoordReset()

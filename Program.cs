@@ -2,8 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Models;
 using Microsoft.AspNetCore.Identity;
 using The_Bread_Pit.Data;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configureer de verzoekcultuur
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] { "nl-NL", "en-US", "fr-FR" }; // Voeg andere ondersteunde culturen toe
+    options.DefaultRequestCulture = new RequestCulture("nl-NL"); // Stel de standaardcultuur in
+    options.SupportedCultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+    options.SupportedUICultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -39,6 +50,9 @@ app.UseSession();
 // Middleware voor routing
 app.UseRouting();
 
+// Gebruik verzoeklokalisatie
+app.UseRequestLocalization();
+
 app.UseStatusCodePages();
 app.UseAuthentication();;
 
@@ -68,10 +82,22 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}/{url?}");
 
-var scope = app.Services.CreateScope();
-var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-await DbInitializer.InitializeAsync(userManager, roleManager);
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+
+    // Hier voer je de DbInitializer uit als die er is
+    var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await DbInitializer.InitializeAsync(userManager, roleManager);
+
+    // Hier controleer en creëer je de rol 'User' als deze niet bestaat
+    if (!await roleManager.RoleExistsAsync("User"))
+    {
+        var role = new IdentityRole("User");
+        await roleManager.CreateAsync(role);
+    }
+}
 
 app.UseEndpoints(endpoints =>
 {

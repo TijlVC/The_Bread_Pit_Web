@@ -17,4 +17,10 @@ namespace The_Bread_Pit.Areas.Admin.Models
         public List<IdentityUser>? ConfirmedUsers { get; set; }
     }
 
+        public class ErrorViewModel
+    {
+        public string? RequestId { get; set; }
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+
 }

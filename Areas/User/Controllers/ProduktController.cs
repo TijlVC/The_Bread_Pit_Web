@@ -42,24 +42,18 @@ namespace The_Bread_Pit.Areas.User.Controllers
         }
 
         [Route("[area]/Categorien/{id?}")]
-        public IActionResult List(string id = "Alles")
+        public IActionResult List(int? id) // Let op dat we nu een nullable int accepteren
         {
             var categorien = context.Categorien.OrderBy(c => c.CategoryID).ToList();
             IQueryable<Produkt> query = context.Produkten;
 
-            if (id != "Alles")
+            if (id.HasValue) // Als er een ID is opgegeven
             {
-                if (int.TryParse(id, out int categoryId))
-                {
-                    query = query.Where(p => p.CategoryID == categoryId);
-                }
-                else
-                {
-                    // Als de conversie faalt, toon dan mogelijk geen producten of handel anderszins af
-                    // Deze regel zorgt ervoor dat wanneer het ID niet overeenkomt met een bestaande categorie,
-                    // er geen producten worden teruggegeven.
-                    query = query.Where(p => false);
-                }
+                query = query.Where(p => p.CategoryID == id.Value);
+            }
+            else
+            {
+                query = query.Where(p => true); // Als er geen ID is, toon alle producten
             }
 
             var produkten = query.OrderBy(x => x.ProductID).ToList();
@@ -68,7 +62,7 @@ namespace The_Bread_Pit.Areas.User.Controllers
             {
                 Produkten = produkten,
                 Categorien = categorien,
-                SelectedCategory = id
+                SelectedCategory = id.HasValue ? categorien.FirstOrDefault(c => c.CategoryID == id.Value)?.CategorieNaam : "Alles"
             };
 
             return View(list);

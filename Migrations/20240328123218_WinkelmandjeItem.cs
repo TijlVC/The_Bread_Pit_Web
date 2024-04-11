@@ -4,7 +4,7 @@
 
 namespace The_Bread_Pit.Migrations
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class WinkelmandjeItem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

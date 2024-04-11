@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "ArhBDmuC+ViiJzfB82kA6xJEY1OrJFEBQERREhtohMwPpZR1kvTgzCWOSNvPRlqLDj2U5EMRirv+1S6Gkfr4Og==",
+  "dgSpecHash": "SQQOmg/Y3/cBH8FEmqKUq5hpB+MYie8YnKY8TZoWUs+Ec6fSne1/ScDV6kilu4tfSOOYtjIjhugS9IjXiGAkXQ==",
   "success": true,
-  "projectFilePath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V2\\The Bread Pit.csproj",
+  "projectFilePath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V3\\The Bread Pit.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tijl\\.nuget\\packages\\4nuget\\1.0.0\\4nuget.1.0.0.nupkg.sha512",
     "C:\\Users\\Tijl\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Tijl\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Tijl\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

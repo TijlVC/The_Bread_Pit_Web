@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "The Bread Pit/1.0.0": {
         "dependencies": {
-          "4NuGet": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.10",
           "Microsoft.AspNetCore.Identity.UI": "6.0.10",
@@ -23,7 +22,6 @@
           "The Bread Pit.dll": {}
         }
       },
-      "4NuGet/1.0.0": {},
       "Humanizer/2.14.1": {
         "dependencies": {
           "Humanizer.Core.af": "2.14.1",
@@ -2575,13 +2573,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "4NuGet/1.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IMd/m268y3vIfdcgWJY9e2QVtPp87MJZ1Hi2GIK4+VyW+tVX4BmA2lQQ1VISK9S69S/etHu+C/CcLL4YTgJOJQ==",
-      "path": "4nuget/1.0.0",
-      "hashPath": "4nuget.1.0.0.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",

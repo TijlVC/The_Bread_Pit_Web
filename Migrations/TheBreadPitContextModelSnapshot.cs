@@ -224,6 +224,29 @@ namespace The_Bread_Pit.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.Bestelling", b =>
+                {
+                    b.Property<int>("BestellingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BestellingId"), 1L, 1);
+
+                    b.Property<DateTime>("BestelDatum")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("TotaalPrijs")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BestellingId");
+
+                    b.ToTable("Bestellingen");
+                });
+
             modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.WinkelmandjeItem", b =>
                 {
                     b.Property<int>("WinkelmandjeItemID")
@@ -235,6 +258,9 @@ namespace The_Bread_Pit.Migrations
                     b.Property<int>("Aantal")
                         .HasColumnType("int");
 
+                    b.Property<int?>("BestellingId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProduktProductID")
                         .HasColumnType("int");
 
@@ -243,6 +269,8 @@ namespace The_Bread_Pit.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("WinkelmandjeItemID");
+
+                    b.HasIndex("BestellingId");
 
                     b.HasIndex("ProduktProductID");
 
@@ -353,9 +381,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer on hierover!",
                             CategoryID = 1,
                             Extra = "Geen extra info meer beschikbaar",
-                            Omschrijving = "Soep",
+                            Omschrijving = "Soep van de dag",
                             Prijs = 1.1m,
-                            ProduktNaam = "Soep van de dag"
+                            ProduktNaam = "Soep"
                         },
                         new
                         {
@@ -363,9 +391,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Gluten, Lactose, Soja, Selderij",
                             CategoryID = 7,
                             Extra = "Kan sporen van noten bevatten",
-                            Omschrijving = "Stokbrood",
+                            Omschrijving = "Stuk stokbrood",
                             Prijs = 0.55m,
-                            ProduktNaam = "Stuk stokbrood"
+                            ProduktNaam = "Stokbrood"
                         },
                         new
                         {
@@ -373,9 +401,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer on hierover!",
                             CategoryID = 7,
                             Extra = "Geen extra info",
-                            Omschrijving = "Boter",
+                            Omschrijving = "Blokje melkerij boter",
                             Prijs = 0.55m,
-                            ProduktNaam = "Blokje melkerij boter"
+                            ProduktNaam = "Boter"
                         },
                         new
                         {
@@ -383,9 +411,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer on hierover!",
                             CategoryID = 2,
                             Extra = "Geen extra info",
-                            Omschrijving = "Ceasar Salad",
+                            Omschrijving = "Sla met stukjes Kip",
                             Prijs = 5m,
-                            ProduktNaam = "Sla met stukjes Kip"
+                            ProduktNaam = "Ceasar Salad"
                         },
                         new
                         {
@@ -393,9 +421,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer on hierover!",
                             CategoryID = 3,
                             Extra = "Geen extra info",
-                            Omschrijving = "Pasta 4 Kazen",
+                            Omschrijving = "Pasta Klein",
                             Prijs = 5.5m,
-                            ProduktNaam = "Pasta Klein"
+                            ProduktNaam = "Pasta 4 Kazen"
                         },
                         new
                         {
@@ -403,9 +431,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 3,
                             Extra = "Geen extra info",
-                            Omschrijving = "Pasta 4 kazen",
+                            Omschrijving = "Pasta Groot",
                             Prijs = 7m,
-                            ProduktNaam = "Pasta Groot"
+                            ProduktNaam = "Pasta 4 kazen"
                         },
                         new
                         {
@@ -413,9 +441,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Panini met ham en kaas",
+                            Omschrijving = "Panini",
                             Prijs = 4m,
-                            ProduktNaam = "Panini"
+                            ProduktNaam = "Panini met ham en kaas"
                         },
                         new
                         {
@@ -423,9 +451,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met kaas",
+                            Omschrijving = "Kaas",
                             Prijs = 2.85m,
-                            ProduktNaam = "Kaas"
+                            ProduktNaam = "Belegd Broodje met kaas"
                         },
                         new
                         {
@@ -433,9 +461,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met ham",
+                            Omschrijving = "Ham",
                             Prijs = 2.85m,
-                            ProduktNaam = "Ham"
+                            ProduktNaam = "Belegd Broodje met ham"
                         },
                         new
                         {
@@ -443,9 +471,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met kaas/ham",
+                            Omschrijving = "Kaas/Ham",
                             Prijs = 3m,
-                            ProduktNaam = "Kaas/Ham"
+                            ProduktNaam = "Belegd Broodje met kaas/ham"
                         },
                         new
                         {
@@ -453,9 +481,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met prepare",
+                            Omschrijving = "Prepare",
                             Prijs = 3m,
-                            ProduktNaam = "Prepare"
+                            ProduktNaam = "Belegd Broodje met prepare"
                         },
                         new
                         {
@@ -463,9 +491,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met smos",
+                            Omschrijving = "Smos",
                             Prijs = 3.1m,
-                            ProduktNaam = "Smos"
+                            ProduktNaam = "Belegd Broodje met smos"
                         },
                         new
                         {
@@ -473,9 +501,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met kip curry",
+                            Omschrijving = "Kip curry",
                             Prijs = 3.1m,
-                            ProduktNaam = "Kip curry"
+                            ProduktNaam = "Belegd Broodje met kip curry"
                         },
                         new
                         {
@@ -483,9 +511,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met surimi",
+                            Omschrijving = "Surimi",
                             Prijs = 3.5m,
-                            ProduktNaam = "Surimi"
+                            ProduktNaam = "Belegd Broodje met surimi"
                         },
                         new
                         {
@@ -493,9 +521,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met gerookte ham",
+                            Omschrijving = "Gerookte ham",
                             Prijs = 4m,
-                            ProduktNaam = "Gerookte ham"
+                            ProduktNaam = "Belegd Broodje met gerookte ham"
                         },
                         new
                         {
@@ -503,9 +531,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 5,
                             Extra = "Geen extra info",
-                            Omschrijving = "Belegd Broodje met gerookte zalm",
+                            Omschrijving = "Gerookte zalm",
                             Prijs = 4m,
-                            ProduktNaam = "Gerookte zalm"
+                            ProduktNaam = "Belegd Broodje met gerookte zalm"
                         },
                         new
                         {
@@ -513,9 +541,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Stukje fruit",
+                            Omschrijving = "Stuk fruit",
                             Prijs = 0.35m,
-                            ProduktNaam = "Stuk fruit"
+                            ProduktNaam = "Stukje fruit"
                         },
                         new
                         {
@@ -523,9 +551,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Potje yogurt",
+                            Omschrijving = "Yogurt",
                             Prijs = 1.3m,
-                            ProduktNaam = "Yogurt"
+                            ProduktNaam = "Potje yogurt"
                         },
                         new
                         {
@@ -533,9 +561,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Dessert",
+                            Omschrijving = "Home-made dessert",
                             Prijs = 2.2m,
-                            ProduktNaam = "Home-made dessert"
+                            ProduktNaam = "Dessert"
                         },
                         new
                         {
@@ -543,9 +571,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Foodbar",
+                            Omschrijving = "Crazy Berry",
                             Prijs = 2.75m,
-                            ProduktNaam = "Crazy Berry"
+                            ProduktNaam = "Foodbar"
                         },
                         new
                         {
@@ -553,9 +581,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Foodbar",
+                            Omschrijving = "Good Food",
                             Prijs = 2.75m,
-                            ProduktNaam = "Good Food"
+                            ProduktNaam = "Foodbar"
                         },
                         new
                         {
@@ -563,9 +591,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Dessert",
+                            Omschrijving = "Muffin / Donut",
                             Prijs = 1.45m,
-                            ProduktNaam = "Muffin / Donut"
+                            ProduktNaam = "Dessert"
                         },
                         new
                         {
@@ -573,9 +601,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Dessert",
+                            Omschrijving = "Gebak",
                             Prijs = 1.65m,
-                            ProduktNaam = "Gebak"
+                            ProduktNaam = "Dessert"
                         },
                         new
                         {
@@ -583,9 +611,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Dessert",
+                            Omschrijving = "Dessert voorverpakt",
                             Prijs = 1.3m,
-                            ProduktNaam = "Dessert voorverpakt"
+                            ProduktNaam = "Dessert"
                         },
                         new
                         {
@@ -603,9 +631,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Snoep",
+                            Omschrijving = "Kinder Bueno",
                             Prijs = 1.45m,
-                            ProduktNaam = "Kinder Bueno"
+                            ProduktNaam = "Snoep"
                         },
                         new
                         {
@@ -613,9 +641,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Snoep",
+                            Omschrijving = "Chips",
                             Prijs = 1.65m,
-                            ProduktNaam = "Chips"
+                            ProduktNaam = "Snoep"
                         },
                         new
                         {
@@ -623,9 +651,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Snoep",
+                            Omschrijving = "Chocolade",
                             Prijs = 1.65m,
-                            ProduktNaam = "Chocolade"
+                            ProduktNaam = "Snoep"
                         },
                         new
                         {
@@ -633,9 +661,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 6,
                             Extra = "Geen extra info",
-                            Omschrijving = "Smoothie",
+                            Omschrijving = "Innocent smoothie",
                             Prijs = 3.1m,
-                            ProduktNaam = "Innocent smoothie"
+                            ProduktNaam = "Smoothie"
                         },
                         new
                         {
@@ -643,9 +671,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Chaudefontaine",
+                            Omschrijving = "Plat water (0.5L)",
                             Prijs = 1.3m,
-                            ProduktNaam = "Plat water (0.5L)"
+                            ProduktNaam = "Chaudefontaine"
                         },
                         new
                         {
@@ -653,9 +681,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Chaudefontaine",
+                            Omschrijving = "Bruis water (0.5L)",
                             Prijs = 1.3m,
-                            ProduktNaam = "Bruis water (0.5L)"
+                            ProduktNaam = "Chaudefontaine"
                         },
                         new
                         {
@@ -663,9 +691,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje frisdrank",
+                            Omschrijving = "Cola (0.5L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Cola (0.5L)"
+                            ProduktNaam = "Flesje frisdrank"
                         },
                         new
                         {
@@ -673,9 +701,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje frisdrank",
+                            Omschrijving = "Fanta (0.5L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Fanta (0.5L)"
+                            ProduktNaam = "Flesje frisdrank"
                         },
                         new
                         {
@@ -683,9 +711,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje frisdrank",
+                            Omschrijving = "Sprite (0.5L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Sprite (0.5L)"
+                            ProduktNaam = "Flesje frisdrank"
                         },
                         new
                         {
@@ -693,9 +721,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje frisdrank",
+                            Omschrijving = "Lipton Ice-Tea (0.5L)",
                             Prijs = 1.9m,
-                            ProduktNaam = "Lipton Ice-Tea (0.5L)"
+                            ProduktNaam = "Flesje frisdrank"
                         },
                         new
                         {
@@ -703,9 +731,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje fruitsap",
+                            Omschrijving = "Appelsiensap (0.33L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Appelsiensap (0.33L)"
+                            ProduktNaam = "Flesje fruitsap"
                         },
                         new
                         {
@@ -713,9 +741,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje fruitsap",
+                            Omschrijving = "Appelsap (0.33L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Appelsap (0.33L)"
+                            ProduktNaam = "Flesje fruitsap"
                         },
                         new
                         {
@@ -723,9 +751,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Flesje Cécémel",
+                            Omschrijving = "Cécémel (0.33L)",
                             Prijs = 1.75m,
-                            ProduktNaam = "Cécémel (0.33L)"
+                            ProduktNaam = "Flesje Cécémel"
                         },
                         new
                         {
@@ -733,9 +761,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Energiedrank",
+                            Omschrijving = "Blikje Nalu (0.25L)",
                             Prijs = 2.2m,
-                            ProduktNaam = "Blikje Nalu (0.25L)"
+                            ProduktNaam = "Energiedrank"
                         },
                         new
                         {
@@ -743,9 +771,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Energiedrank",
+                            Omschrijving = "Red-Bull (0.25L)",
                             Prijs = 2.75m,
-                            ProduktNaam = "Red-Bull (0.25L)"
+                            ProduktNaam = "Energiedrank"
                         },
                         new
                         {
@@ -753,9 +781,9 @@ namespace The_Bread_Pit.Migrations
                             Allergieën = "Contacteer ons hierover!",
                             CategoryID = 8,
                             Extra = "Geen extra info",
-                            Omschrijving = "Koffiedrank",
+                            Omschrijving = "Cold Coffee to Go",
                             Prijs = 1.2m,
-                            ProduktNaam = "Cold Coffee to Go"
+                            ProduktNaam = "Koffiedrank"
                         });
                 });
 
@@ -812,11 +840,17 @@ namespace The_Bread_Pit.Migrations
 
             modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.WinkelmandjeItem", b =>
                 {
+                    b.HasOne("The_Bread_Pit.Areas.User.Models.Bestelling", "Bestelling")
+                        .WithMany("BesteldeItems")
+                        .HasForeignKey("BestellingId");
+
                     b.HasOne("The_Bread_Pit.Models.Produkt", "Produkt")
                         .WithMany()
                         .HasForeignKey("ProduktProductID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Bestelling");
 
                     b.Navigation("Produkt");
                 });
@@ -828,6 +862,11 @@ namespace The_Bread_Pit.Migrations
                         .HasForeignKey("CategorieCategoryID");
 
                     b.Navigation("Categorie");
+                });
+
+            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.Bestelling", b =>
+                {
+                    b.Navigation("BesteldeItems");
                 });
 #pragma warning restore 612, 618
         }

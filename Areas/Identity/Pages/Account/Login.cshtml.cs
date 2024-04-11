@@ -115,6 +115,24 @@ namespace The_Bread_Pit.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    var user = await _signInManager.UserManager.FindByEmailAsync(Input.Email);
+                    var roles = await _signInManager.UserManager.GetRolesAsync(user);
+
+                    // Hier voegen we onze rolgebaseerde omleidingslogica toe
+                    if (roles.Contains("Admin"))
+                    {
+                        return RedirectToPage("/Index", new { Area = "Admin" });
+                    }
+                    else if (roles.Contains("Employee"))
+                    {
+                        return RedirectToPage("/Index", new { Area = "Employee" });
+                    }
+                    else if (roles.Contains("User"))
+                    {
+                        return RedirectToPage("/Index", new { Area = "User" });
+                    }
+
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

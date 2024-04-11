@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace The_Bread_Pit.Migrations
+namespace The_Bread_Pit.Data.Migrations
 {
-    public partial class AddIdentityTables : Migration
+    public partial class UpdateWinkelmandjeItem : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -2,9 +2,6 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "4NuGet/1.0.0": {
-        "type": "package"
-      },
       "Humanizer/2.14.1": {
         "type": "package",
         "dependencies": {
@@ -3904,19 +3901,6 @@
     }
   },
   "libraries": {
-    "4NuGet/1.0.0": {
-      "sha512": "IMd/m268y3vIfdcgWJY9e2QVtPp87MJZ1Hi2GIK4+VyW+tVX4BmA2lQQ1VISK9S69S/etHu+C/CcLL4YTgJOJQ==",
-      "type": "package",
-      "path": "4nuget/1.0.0",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "4nuget.1.0.0.nupkg.sha512",
-        "4nuget.nuspec",
-        "tools/init.ps1"
-      ]
-    },
     "Humanizer/2.14.1": {
       "sha512": "/FUTD3cEceAAmJSCPN9+J+VhGwmL/C12jvwlyM1DFXShEMsBzvLzLqSrJ2rb+k/W2znKw7JyflZgZpyE+tI7lA==",
       "type": "package",
@@ -11135,7 +11119,6 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "4NuGet >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.10",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.10",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.10",
@@ -11153,11 +11136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V2\\The Bread Pit.csproj",
+      "projectUniqueName": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V3\\The Bread Pit.csproj",
       "projectName": "The Bread Pit",
-      "projectPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V2\\The Bread Pit.csproj",
+      "projectPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V3\\The Bread Pit.csproj",
       "packagesPath": "C:\\Users\\Tijl\\.nuget\\packages\\",
-      "outputPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V2\\obj\\",
+      "outputPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tijl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11191,10 +11174,6 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
-          "4NuGet": {
-            "target": "Package",
-            "version": "[1.0.0, )"
-          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.10, )"

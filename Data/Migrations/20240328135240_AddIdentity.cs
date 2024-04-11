@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace The_Bread_Pit.Migrations
+namespace The_Bread_Pit.Data.Migrations
 {
     public partial class AddIdentity : Migration
     {

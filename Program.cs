@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Models;
 using Microsoft.AspNetCore.Identity;
+using The_Bread_Pit.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,7 +13,8 @@ builder.Services.AddDbContext<TheBreadPitContext>(
     options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("TheBreadPitContext")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //deze op fasle zetten om bij userregistratie geen 'bevstiging te moeten sturen)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<TheBreadPitContext>();
 
 // Sessie configuratie
@@ -38,16 +40,15 @@ app.UseSession();
 app.UseRouting();
 
 app.UseStatusCodePages();
-app.UseAuthentication();
+app.UseAuthentication();;
 
 // Middleware voor autorisatie
 app.UseAuthorization();
 
 app.MapAreaControllerRoute(
-    name: "Admin_area",
-    areaName: "Admin",
-    pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
-);
+       name: "Admin",
+          areaName: "Admin",
+             pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
 app.MapAreaControllerRoute(
     name: "Employee_area",
@@ -61,37 +62,23 @@ app.MapAreaControllerRoute(
     pattern: "User/{controller=Home}/{action=Index}/{id?}"
 );
 
+// Definieer de route voor de MVC controller
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}/{url?}"
-);
+    pattern: "{controller=Home}/{action=Index}/{id?}/{url?}");
+
+var scope = app.Services.CreateScope();
+var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+await DbInitializer.InitializeAsync(userManager, roleManager);
 
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapRazorPages();
 });
 
-await SeedDatabaseAsync(app.Services);
-
 app.Run();
 
-async Task SeedDatabaseAsync(IServiceProvider services)
-{
-    using var scope = services.CreateScope();
-    var serviceProvider = scope.ServiceProvider;
-
-    try
-    {
-        var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
-        var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-
-        await SeedData.InitializeAsync(userManager, roleManager);
-    }
-    catch (Exception ex)
-    {
-        // Log de fout. In een productie-app zou je waarschijnlijk wat robuustere foutafhandeling willen doen.
-        var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "Een fout opgetreden tijdens het aanmaken van rollen en gebruikers.");
-    }
-}
-
+// bij eerste keer voer volgende commando's uit in PM-console:
+// Add-Migration InitialCreate
+// Update-Database

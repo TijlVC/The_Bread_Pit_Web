@@ -1,0 +1,28 @@
+﻿@model The_Bread_Pit.Areas.User.Models.Bestelling
+
+<h2>Overzicht Bestelling</h2>
+
+<p>BestelDatum: @Model.BestelDatum.ToShortDateString()</p>
+<p>TotaalPrijs: @Model.TotaalPrijs.ToString("C")</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Productnaam</th>
+            <th>Aantal</th>
+            <th>Prijs per stuk</th>
+            <th>Totale prijs</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BesteldeItems)
+        {
+            <tr>
+                <td>@item.Produkt.ProduktNaam</td>
+                <td>@item.Aantal</td>
+                <td>@item.Produkt.Prijs.ToString("C")</td>
+                <td>@(item.Aantal * item.Produkt.Prijs).ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>

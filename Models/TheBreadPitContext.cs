@@ -5,14 +5,15 @@ using The_Bread_Pit.Areas.User.Models;
 namespace The_Bread_Pit.Models
 {
 #nullable disable
-    public class TheBreadPitContext : IdentityDbContext
+    public class TheBreadPitContext: IdentityDbContext
     {
-        public TheBreadPitContext(DbContextOptions<TheBreadPitContext> options) : base(options) { }
+        public TheBreadPitContext(DbContextOptions<TheBreadPitContext> options) :base(options) { }
 
-        public DbSet<Produkt> Produkten { get; set; }
+        public DbSet<Produkt> Produkten { get; set; } 
 
         public DbSet<Categorie> Categorien { get; set; }
 
+        public DbSet<Bestelling> Bestellingen { get; set; }
         public DbSet<WinkelmandjeItem> WinkelmandjeItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -40,8 +41,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 1,
                     CategoryID = 1,
-                    ProduktNaam = "Soep van de dag",
-                    Omschrijving = "Soep",
+                    Omschrijving = "Soep van de dag",
+                    ProduktNaam = "Soep",
                     Prijs = (decimal)1.1,
                     Allergieën = "Contacteer on hierover!",
                     Extra = "Geen extra info meer beschikbaar",
@@ -50,8 +51,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 2,
                     CategoryID = 7,
-                    ProduktNaam = "Stuk stokbrood",
-                    Omschrijving = "Stokbrood",
+                    Omschrijving = "Stuk stokbrood",
+                    ProduktNaam = "Stokbrood",
                     Prijs = (decimal)0.55,
                     Allergieën = "Gluten, Lactose, Soja, Selderij",
                     Extra = "Kan sporen van noten bevatten",
@@ -60,8 +61,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 3,
                     CategoryID = 7,
-                    ProduktNaam = "Blokje melkerij boter",
-                    Omschrijving = "Boter",
+                    Omschrijving = "Blokje melkerij boter",
+                    ProduktNaam = "Boter",
                     Prijs = (decimal)0.55,
                     Allergieën = "Contacteer on hierover!",
                     Extra = "Geen extra info",
@@ -70,8 +71,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 4,
                     CategoryID = 2,
-                    ProduktNaam = "Sla met stukjes Kip",
-                    Omschrijving = "Ceasar Salad",
+                    Omschrijving = "Sla met stukjes Kip",
+                    ProduktNaam = "Ceasar Salad",
                     Prijs = (decimal)5.0,
                     Allergieën = "Contacteer on hierover!",
                     Extra = "Geen extra info",
@@ -80,8 +81,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 5,
                     CategoryID = 3,
-                    ProduktNaam = "Pasta Klein",
-                    Omschrijving = "Pasta 4 Kazen",
+                    Omschrijving = "Pasta Klein",
+                    ProduktNaam = "Pasta 4 Kazen",
                     Prijs = (decimal)5.5,
                     Allergieën = "Contacteer on hierover!",
                     Extra = "Geen extra info",
@@ -90,8 +91,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 6,
                     CategoryID = 3,
-                    ProduktNaam = "Pasta Groot",
-                    Omschrijving = "Pasta 4 kazen",
+                    Omschrijving = "Pasta Groot",
+                    ProduktNaam = "Pasta 4 kazen",
                     Prijs = (decimal)7.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -100,8 +101,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 7,
                     CategoryID = 5,
-                    ProduktNaam = "Panini",
-                    Omschrijving = "Panini met ham en kaas",
+                    Omschrijving = "Panini",
+                    ProduktNaam = "Panini met ham en kaas",
                     Prijs = (decimal)4.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -110,8 +111,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 8,
                     CategoryID = 5,
-                    ProduktNaam = "Kaas",
-                    Omschrijving = "Belegd Broodje met kaas",
+                    Omschrijving = "Kaas",
+                    ProduktNaam = "Belegd Broodje met kaas",
                     Prijs = (decimal)2.85,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -120,8 +121,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 9,
                     CategoryID = 5,
-                    ProduktNaam = "Ham",
-                    Omschrijving = "Belegd Broodje met ham",
+                    Omschrijving = "Ham",
+                    ProduktNaam = "Belegd Broodje met ham",
                     Prijs = (decimal)2.85,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -130,8 +131,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 10,
                     CategoryID = 5,
-                    ProduktNaam = "Kaas/Ham",
-                    Omschrijving = "Belegd Broodje met kaas/ham",
+                    Omschrijving = "Kaas/Ham",
+                    ProduktNaam = "Belegd Broodje met kaas/ham",
                     Prijs = (decimal)3.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -140,8 +141,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 11,
                     CategoryID = 5,
-                    ProduktNaam = "Prepare",
-                    Omschrijving = "Belegd Broodje met prepare",
+                    Omschrijving = "Prepare",
+                    ProduktNaam = "Belegd Broodje met prepare",
                     Prijs = (decimal)3.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -150,8 +151,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 12,
                     CategoryID = 5,
-                    ProduktNaam = "Smos",
-                    Omschrijving = "Belegd Broodje met smos",
+                    Omschrijving = "Smos",
+                    ProduktNaam = "Belegd Broodje met smos",
                     Prijs = (decimal)3.10,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -160,8 +161,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 13,
                     CategoryID = 5,
-                    ProduktNaam = "Kip curry",
-                    Omschrijving = "Belegd Broodje met kip curry",
+                    Omschrijving = "Kip curry",
+                    ProduktNaam = "Belegd Broodje met kip curry",
                     Prijs = (decimal)3.10,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -170,8 +171,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 14,
                     CategoryID = 5,
-                    ProduktNaam = "Surimi",
-                    Omschrijving = "Belegd Broodje met surimi",
+                    Omschrijving = "Surimi",
+                    ProduktNaam = "Belegd Broodje met surimi",
                     Prijs = (decimal)3.50,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -180,8 +181,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 15,
                     CategoryID = 5,
-                    ProduktNaam = "Gerookte ham",
-                    Omschrijving = "Belegd Broodje met gerookte ham",
+                    Omschrijving = "Gerookte ham",
+                    ProduktNaam = "Belegd Broodje met gerookte ham",
                     Prijs = (decimal)4.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -190,8 +191,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 16,
                     CategoryID = 5,
-                    ProduktNaam = "Gerookte zalm",
-                    Omschrijving = "Belegd Broodje met gerookte zalm",
+                    Omschrijving = "Gerookte zalm",
+                    ProduktNaam = "Belegd Broodje met gerookte zalm",
                     Prijs = (decimal)4.00,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -200,8 +201,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 17,
                     CategoryID = 6,
-                    ProduktNaam = "Stuk fruit",
-                    Omschrijving = "Stukje fruit",
+                    Omschrijving = "Stuk fruit",
+                    ProduktNaam = "Stukje fruit",
                     Prijs = (decimal)0.35,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -210,8 +211,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 18,
                     CategoryID = 6,
-                    ProduktNaam = "Yogurt",
-                    Omschrijving = "Potje yogurt",
+                    Omschrijving = "Yogurt",
+                    ProduktNaam = "Potje yogurt",
                     Prijs = (decimal)1.30,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -220,8 +221,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 19,
                     CategoryID = 6,
-                    ProduktNaam = "Home-made dessert",
-                    Omschrijving = "Dessert",
+                    Omschrijving = "Home-made dessert",
+                    ProduktNaam = "Dessert",
                     Prijs = (decimal)2.20,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -230,8 +231,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 20,
                     CategoryID = 6,
-                    ProduktNaam = "Crazy Berry",
-                    Omschrijving = "Foodbar",
+                    Omschrijving = "Crazy Berry",
+                    ProduktNaam = "Foodbar",
                     Prijs = (decimal)2.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -240,8 +241,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 21,
                     CategoryID = 6,
-                    ProduktNaam = "Good Food",
-                    Omschrijving = "Foodbar",
+                    Omschrijving = "Good Food",
+                    ProduktNaam = "Foodbar",
                     Prijs = (decimal)2.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -250,8 +251,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 22,
                     CategoryID = 6,
-                    ProduktNaam = "Muffin / Donut",
-                    Omschrijving = "Dessert",
+                    Omschrijving = "Muffin / Donut",
+                    ProduktNaam = "Dessert",
                     Prijs = (decimal)1.45,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -260,8 +261,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 23,
                     CategoryID = 6,
-                    ProduktNaam = "Gebak",
-                    Omschrijving = "Dessert",
+                    Omschrijving = "Gebak",
+                    ProduktNaam = "Dessert",
                     Prijs = (decimal)1.65,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -270,8 +271,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 24,
                     CategoryID = 6,
-                    ProduktNaam = "Dessert voorverpakt",
-                    Omschrijving = "Dessert",
+                    Omschrijving = "Dessert voorverpakt",
+                    ProduktNaam = "Dessert",
                     Prijs = (decimal)1.30,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -280,8 +281,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 25,
                     CategoryID = 6,
-                    ProduktNaam = "Snoep",
                     Omschrijving = "Snoep",
+                    ProduktNaam = "Snoep",
                     Prijs = (decimal)1.30,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -290,8 +291,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 26,
                     CategoryID = 6,
-                    ProduktNaam = "Kinder Bueno",
-                    Omschrijving = "Snoep",
+                    Omschrijving = "Kinder Bueno",
+                    ProduktNaam = "Snoep",
                     Prijs = (decimal)1.45,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -300,8 +301,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 27,
                     CategoryID = 6,
-                    ProduktNaam = "Chips",
-                    Omschrijving = "Snoep",
+                    Omschrijving = "Chips",
+                    ProduktNaam = "Snoep",
                     Prijs = (decimal)1.65,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -310,8 +311,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 28,
                     CategoryID = 6,
-                    ProduktNaam = "Chocolade",
-                    Omschrijving = "Snoep",
+                    Omschrijving = "Chocolade",
+                    ProduktNaam = "Snoep",
                     Prijs = (decimal)1.65,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -320,8 +321,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 29,
                     CategoryID = 6,
-                    ProduktNaam = "Innocent smoothie",
-                    Omschrijving = "Smoothie",
+                    Omschrijving = "Innocent smoothie",
+                    ProduktNaam = "Smoothie",
                     Prijs = (decimal)3.10,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -330,8 +331,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 30,
                     CategoryID = 8,
-                    ProduktNaam = "Plat water (0.5L)",
-                    Omschrijving = "Chaudefontaine",
+                    Omschrijving = "Plat water (0.5L)",
+                    ProduktNaam = "Chaudefontaine",
                     Prijs = (decimal)1.30,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -340,8 +341,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 31,
                     CategoryID = 8,
-                    ProduktNaam = "Bruis water (0.5L)",
-                    Omschrijving = "Chaudefontaine",
+                    Omschrijving = "Bruis water (0.5L)",
+                    ProduktNaam = "Chaudefontaine",
                     Prijs = (decimal)1.30,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -350,8 +351,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 32,
                     CategoryID = 8,
-                    ProduktNaam = "Cola (0.5L)",
-                    Omschrijving = "Flesje frisdrank",
+                    Omschrijving = "Cola (0.5L)",
+                    ProduktNaam = "Flesje frisdrank",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -360,8 +361,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 33,
                     CategoryID = 8,
-                    ProduktNaam = "Fanta (0.5L)",
-                    Omschrijving = "Flesje frisdrank",
+                    Omschrijving = "Fanta (0.5L)",
+                    ProduktNaam = "Flesje frisdrank",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -370,8 +371,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 34,
                     CategoryID = 8,
-                    ProduktNaam = "Sprite (0.5L)",
-                    Omschrijving = "Flesje frisdrank",
+                    Omschrijving = "Sprite (0.5L)",
+                    ProduktNaam = "Flesje frisdrank",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -380,8 +381,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 35,
                     CategoryID = 8,
-                    ProduktNaam = "Lipton Ice-Tea (0.5L)",
-                    Omschrijving = "Flesje frisdrank",
+                    Omschrijving = "Lipton Ice-Tea (0.5L)",
+                    ProduktNaam = "Flesje frisdrank",
                     Prijs = (decimal)1.90,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -390,8 +391,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 36,
                     CategoryID = 8,
-                    ProduktNaam = "Appelsiensap (0.33L)",
-                    Omschrijving = "Flesje fruitsap",
+                    Omschrijving = "Appelsiensap (0.33L)",
+                    ProduktNaam = "Flesje fruitsap",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -400,8 +401,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 37,
                     CategoryID = 8,
-                    ProduktNaam = "Appelsap (0.33L)",
-                    Omschrijving = "Flesje fruitsap",
+                    Omschrijving = "Appelsap (0.33L)",
+                    ProduktNaam = "Flesje fruitsap",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -410,8 +411,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 38,
                     CategoryID = 8,
-                    ProduktNaam = "Cécémel (0.33L)",
-                    Omschrijving = "Flesje Cécémel",
+                    Omschrijving = "Cécémel (0.33L)",
+                    ProduktNaam = "Flesje Cécémel",
                     Prijs = (decimal)1.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -420,8 +421,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 39,
                     CategoryID = 8,
-                    ProduktNaam = "Blikje Nalu (0.25L)",
-                    Omschrijving = "Energiedrank",
+                    Omschrijving = "Blikje Nalu (0.25L)",
+                    ProduktNaam = "Energiedrank",
                     Prijs = (decimal)2.20,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -430,8 +431,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 40,
                     CategoryID = 8,
-                    ProduktNaam = "Red-Bull (0.25L)",
-                    Omschrijving = "Energiedrank",
+                    Omschrijving = "Red-Bull (0.25L)",
+                    ProduktNaam = "Energiedrank",
                     Prijs = (decimal)2.75,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"
@@ -440,8 +441,8 @@ namespace The_Bread_Pit.Models
                 {
                     ProductID = 41,
                     CategoryID = 8,
-                    ProduktNaam = "Cold Coffee to Go",
-                    Omschrijving = "Koffiedrank",
+                    Omschrijving = "Cold Coffee to Go",
+                    ProduktNaam = "Koffiedrank",
                     Prijs = (decimal)1.20,
                     Allergieën = "Contacteer ons hierover!",
                     Extra = "Geen extra info"

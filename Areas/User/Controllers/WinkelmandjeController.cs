@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Http;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Areas.User.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace The_Bread_Pit.Areas.User.Controllers
 {
     [Area("User")]
+    [Authorize(Roles = "User")]
     public class WinkelmandjeController : Controller
     {
         private readonly TheBreadPitContext _context;
@@ -34,7 +36,8 @@ namespace The_Bread_Pit.Areas.User.Controllers
                     {
                         Produkt = product,
                         Aantal = 1,
-                        SessieId = sessieId
+                        SessieId = sessieId,
+                        BestellingId = null
                     };
                     _context.WinkelmandjeItems.Add(winkelmandjeItem);
                 }

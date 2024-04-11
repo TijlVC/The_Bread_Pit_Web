@@ -9,5 +9,7 @@ namespace The_Bread_Pit.Areas.User.Models
         public Produkt? Produkt { get; set; }
         public int Aantal { get; set; }
         public string SessieId { get; set; } = string.Empty;
+        public int? BestellingId { get; set; } // ForeignKey naar Bestelling
+        public Bestelling? Bestelling { get; set; }
     }
 }

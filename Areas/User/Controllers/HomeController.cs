@@ -6,10 +6,10 @@ namespace The_Bread_Pit.Areas.User.Controllers
     public class HomeController : Controller
     {
         [Area("User")]
-        [Authorize(Policy = "RequireUserRole")]
+        [Authorize(Roles = "User")]
         public IActionResult Index()
         {
             return View();
-        }            
+        }
     }
 }

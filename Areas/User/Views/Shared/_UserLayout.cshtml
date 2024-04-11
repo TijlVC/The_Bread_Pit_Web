@@ -24,6 +24,10 @@
                                @(controller == "Winkelmandje" && action == "Index" ? "active" : "")"
                            asp-area="User" asp-controller="Winkelmandje" asp-action="Index">Winkelmandje</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(controller == "Bestelling" ? "active" : "")"
+                           asp-area="User" asp-controller="Bestelling" asp-action="Overzicht">Overzicht Bestelling</a>
+                    </li>
                     <li class="nav-item ms-auto">
                         <a class="nav-link
                                @(controller == "Home" && action == "Index" ? "active" : "")" asp-area=""

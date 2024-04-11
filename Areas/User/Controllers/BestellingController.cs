@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using The_Bread_Pit.Areas.User.Models;
-using The_Bread_Pit.Models; // Pas dit pad aan naar waar je context zich bevindt
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using The_Bread_Pit.Models;
 
 namespace The_Bread_Pit.Areas.User.Controllers
 {
@@ -11,25 +12,134 @@ namespace The_Bread_Pit.Areas.User.Controllers
     public class BestellingController : Controller
     {
         private readonly TheBreadPitContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public BestellingController(TheBreadPitContext context)
+        public BestellingController(TheBreadPitContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "User")]
+        public async Task<IActionResult> PlaatsBestelling()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user?.Id;
+
+            // Start een nieuwe bestelling
+            var bestelling = new Bestelling
+            {
+                UserId = userId,
+                BestelDatum = DateTime.Now,
+                Items = new List<BestelItem>(),
+                IsAfgerond = false
+            };
+
+            // Haal de winkelmandje items op voor de gebruiker
+            var winkelmandjeItems = _context.WinkelmandjeItems
+                .Where(w => w.UserId == userId)
+                .Include(w => w.Produkt)
+                .ToList();
+
+            // Kopieer de items naar de bestelling
+            foreach (var winkelmandjeItem in winkelmandjeItems)
+            {
+                var bestelItem = new BestelItem
+                {
+                    ProduktProductID = winkelmandjeItem.Produkt.ProductID,
+                    Aantal = winkelmandjeItem.Aantal,
+                    PrijsPerStuk = winkelmandjeItem.Produkt.Prijs
+                    // Zet hier eventuele andere benodigde eigenschappen
+                };
+
+                bestelling.Items.Add(bestelItem);
+                _context.WinkelmandjeItems.Remove(winkelmandjeItem); // Optioneel: Verwijder het item uit het winkelmandje
+            }
+
+            _context.Bestellingen.Add(bestelling);
+            await _context.SaveChangesAsync();
+
+            // Redirect naar de overzicht pagina die nu de bestelling zal tonen
+            return RedirectToAction("Overzicht", new { bestellingId = bestelling.BestellingId });
         }
 
         public async Task<IActionResult> Overzicht(int bestellingId)
         {
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user?.Id;
             var bestelling = await _context.Bestellingen
-                                    .Include(b => b.BesteldeItems)
-                                    .ThenInclude(i => i.Produkt)
-                                    .FirstOrDefaultAsync(b => b.BestellingId == bestellingId);
+                .Include(b => b.Items)
+                .ThenInclude(i => i.Produkt)
+                .FirstOrDefaultAsync(b => b.BestellingId == bestellingId);
 
             if (bestelling == null)
             {
-                return NotFound();
+                return View("LegeBestelling");
             }
 
-            return View(bestelling);
+            var viewModel = new BestellingViewModel
+            {
+                BestellingId = bestelling.BestellingId,
+                GebruikerNaam = user.UserName, // Haal de username van de huidige gebruiker
+                BestelDatum = bestelling.BestelDatum,
+                Items = bestelling.Items.Select(i => new WinkelmandjeItemViewModel
+                {
+                    ProductId = i.ProduktProductID,
+                    ProductNaam = i.Produkt.ProduktNaam,
+                    Aantal = i.Aantal,
+                    Prijs = i.PrijsPerStuk
+                }).ToList(),
+                TotaalPrijs = bestelling.Items.Sum(i => i.Aantal * i.PrijsPerStuk),
+                IsBetaald = bestelling.IsBetaald,
+                IsGeannuleerd = bestelling.IsGeannuleerd
+            };
+
+            return View(viewModel);
+        }
+
+        //[HttpPost]
+        //public async Task<IActionResult> AnnuleerBestelling()
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+        //    var items = _context.WinkelmandjeItems.Where(w => w.UserId == user.Id && w.BestellingId == null);
+        //    _context.WinkelmandjeItems.RemoveRange(items);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction("Index", "Winkelmandje");
+        //}
+
+        [HttpPost]
+        public async Task<IActionResult> MarkeerAlsBetaald(int bestellingId)
+        {
+            var bestelling = await _context.Bestellingen.FindAsync(bestellingId);
+            if (bestelling != null && !bestelling.IsGeannuleerd)
+            {
+                bestelling.IsBetaald = true;
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("BetaaldBevestiging");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AnnuleerBestelling(int bestellingId)
+        {
+            var bestelling = await _context.Bestellingen.FindAsync(bestellingId);
+            if (bestelling != null && !bestelling.IsBetaald)
+            {
+                bestelling.IsGeannuleerd = true;
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction("GeannuleerdBevestiging");
+        }
+
+        public IActionResult BetaaldBevestiging()
+        {
+            return View();
+        }
+
+        public IActionResult GeannuleerdBevestiging()
+        {
+            return View();
         }
     }
 }

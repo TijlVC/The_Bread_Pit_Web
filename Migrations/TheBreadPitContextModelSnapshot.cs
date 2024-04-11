@@ -224,6 +224,35 @@ namespace The_Bread_Pit.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.BestelItem", b =>
+                {
+                    b.Property<int>("BestelItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BestelItemId"), 1L, 1);
+
+                    b.Property<int>("Aantal")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BestellingId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("PrijsPerStuk")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("ProduktProductID")
+                        .HasColumnType("int");
+
+                    b.HasKey("BestelItemId");
+
+                    b.HasIndex("BestellingId");
+
+                    b.HasIndex("ProduktProductID");
+
+                    b.ToTable("BestelItems");
+                });
+
             modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.Bestelling", b =>
                 {
                     b.Property<int>("BestellingId")
@@ -235,8 +264,14 @@ namespace The_Bread_Pit.Migrations
                     b.Property<DateTime>("BestelDatum")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("TotaalPrijs")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<bool>("IsAfgerond")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsBetaald")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsGeannuleerd")
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -268,11 +303,17 @@ namespace The_Bread_Pit.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("WinkelmandjeItemID");
 
                     b.HasIndex("BestellingId");
 
                     b.HasIndex("ProduktProductID");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("WinkelmandjeItems");
                 });
@@ -838,11 +879,13 @@ namespace The_Bread_Pit.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.WinkelmandjeItem", b =>
+            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.BestelItem", b =>
                 {
                     b.HasOne("The_Bread_Pit.Areas.User.Models.Bestelling", "Bestelling")
-                        .WithMany("BesteldeItems")
-                        .HasForeignKey("BestellingId");
+                        .WithMany("Items")
+                        .HasForeignKey("BestellingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("The_Bread_Pit.Models.Produkt", "Produkt")
                         .WithMany()
@@ -853,6 +896,31 @@ namespace The_Bread_Pit.Migrations
                     b.Navigation("Bestelling");
 
                     b.Navigation("Produkt");
+                });
+
+            modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.WinkelmandjeItem", b =>
+                {
+                    b.HasOne("The_Bread_Pit.Areas.User.Models.Bestelling", "Bestelling")
+                        .WithMany()
+                        .HasForeignKey("BestellingId");
+
+                    b.HasOne("The_Bread_Pit.Models.Produkt", "Produkt")
+                        .WithMany()
+                        .HasForeignKey("ProduktProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Bestelling");
+
+                    b.Navigation("Produkt");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("The_Bread_Pit.Models.Produkt", b =>
@@ -866,7 +934,7 @@ namespace The_Bread_Pit.Migrations
 
             modelBuilder.Entity("The_Bread_Pit.Areas.User.Models.Bestelling", b =>
                 {
-                    b.Navigation("BesteldeItems");
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

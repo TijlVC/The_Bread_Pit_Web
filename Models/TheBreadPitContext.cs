@@ -14,6 +14,8 @@ namespace The_Bread_Pit.Models
         public DbSet<Categorie> Categorien { get; set; }
 
         public DbSet<Bestelling> Bestellingen { get; set; }
+
+        public DbSet<BestelItem> BestelItems { get; set; }
         public DbSet<WinkelmandjeItem> WinkelmandjeItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

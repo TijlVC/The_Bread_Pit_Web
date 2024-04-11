@@ -1,13 +1,25 @@
-﻿namespace The_Bread_Pit.Areas.User.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace The_Bread_Pit.Areas.User.Models
 {
-    public class Bestelling
+    public class BestellingViewModel
     {
         public int BestellingId { get; set; }
-        public string UserId { get; set; } // ForeignKey naar de IdentityUser
+        public string GebruikerNaam { get; set; }
         public DateTime BestelDatum { get; set; }
+        public List<WinkelmandjeItemViewModel> Items { get; set; }
         public decimal TotaalPrijs { get; set; }
-        // Overige velden zoals status, betalingswijze, afleveradres, etc.
+        public bool IsBetaald { get; set; }
+        public bool IsGeannuleerd { get; set; }
+    }
 
-        public List<WinkelmandjeItem> BesteldeItems { get; set; } // Items die tot deze bestelling behoren
+    public class WinkelmandjeItemViewModel
+    {
+        public int ProductId { get; set; }
+        public string ProductNaam { get; set; }
+        public int Aantal { get; set; }
+        public decimal Prijs { get; set; }
+        public decimal Subtotaal => Aantal * Prijs;
     }
 }

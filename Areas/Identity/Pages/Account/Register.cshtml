@@ -1,7 +1,7 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Registreer";
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -9,7 +9,7 @@
 <div class="container mt-5">
     <div class="col-md-6 col-md-offset-1">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+            <h2>Maak een nieuw account aan.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating">
@@ -27,12 +27,13 @@
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Registreer</button>
             <p>
-                <a asp-controller="Home" asp-action="Index">Return to homepage</a>
+                <a asp-controller="Home" asp-action="Index">Terugkeren naar homepagina</a>
             </p>
         </form>
     </div>
+</div>
     @* <div class="col-md-6 col-md-offset-2">
         <section>
             <h3>Use another service to register.</h3>
@@ -62,8 +63,8 @@
                 }
             }
         </section>
-    </div> *@
-</div>
+    </div> 
+</div>*@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

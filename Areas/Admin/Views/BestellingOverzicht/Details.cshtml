@@ -1,0 +1,35 @@
+﻿@model The_Bread_Pit.Models.Bestelling
+
+<h2>Bestelling Details</h2>
+
+<!-- Toon bestelling details -->
+<div>
+    <h4>Bestelling @Model.BestellingId</h4>
+    <div>Datum: @Model.BestelDatum.ToString("dd MMM yyyy")</div>
+    <div>Totaalprijs: @Model.TotaalPrijs</div>
+    <!-- Andere bestelling details -->
+</div>
+
+<!-- Toon een lijst van bestelde items -->
+<h3>Items</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Aantal</th>
+            <th>Prijs per stuk</th>
+            <th>Totaal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Produkt.ProduktNaam</td>
+                <td>@item.Aantal</td>
+                <td>@item.PrijsPerStuk</td>
+                <td>@(item.Aantal * item.PrijsPerStuk)</td>
+            </tr>
+        }
+    </tbody>
+</table>

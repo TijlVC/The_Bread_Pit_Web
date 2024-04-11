@@ -11136,11 +11136,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V4\\The Bread Pit.csproj",
+      "projectUniqueName": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\The Bread Pit.csproj",
       "projectName": "The Bread Pit",
-      "projectPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V4\\The Bread Pit.csproj",
+      "projectPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\The Bread Pit.csproj",
       "packagesPath": "C:\\Users\\Tijl\\.nuget\\packages\\",
-      "outputPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V4\\obj\\",
+      "outputPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tijl\\AppData\\Roaming\\NuGet\\NuGet.Config",

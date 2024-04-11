@@ -98,16 +98,6 @@ namespace The_Bread_Pit.Areas.User.Controllers
             return View(viewModel);
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> AnnuleerBestelling()
-        //{
-        //    var user = await _userManager.GetUserAsync(User);
-        //    var items = _context.WinkelmandjeItems.Where(w => w.UserId == user.Id && w.BestellingId == null);
-        //    _context.WinkelmandjeItems.RemoveRange(items);
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction("Index", "Winkelmandje");
-        //}
-
         [HttpPost]
         public async Task<IActionResult> MarkeerAlsBetaald(int bestellingId)
         {
@@ -140,6 +130,75 @@ namespace The_Bread_Pit.Areas.User.Controllers
         public IActionResult GeannuleerdBevestiging()
         {
             return View();
+        }
+
+        public async Task<IActionResult> MijnBestellingen(string filter = "")
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var userId = user?.Id;
+
+            IQueryable<Bestelling> query = _context.Bestellingen
+                                                    .Include(b => b.Items)
+                                                        .ThenInclude(i => i.Produkt)
+                                                    .Where(b => b.UserId == userId);
+
+            switch (filter)
+            {
+                case "betaald":
+                    query = query.Where(b => b.IsBetaald);
+                    break;
+                case "geannuleerd":
+                    query = query.Where(b => b.IsGeannuleerd);
+                    break;
+                case "afgerond":
+                    query = query.Where(b => b.IsAfgerond);
+                    break;
+            }
+
+            var bestellingenViewModel = await query
+                .Select(b => new BestellingViewModel
+                {
+                    BestellingId = b.BestellingId,
+                    BestelDatum = b.BestelDatum,
+                    Totaal = b.Items.Sum(i => i.Aantal * i.PrijsPerStuk), // Hier bereken je de totale prijs
+                    IsBetaald = b.IsBetaald,
+                    IsGeannuleerd = b.IsGeannuleerd
+                })
+                .ToListAsync();
+
+            return View(bestellingenViewModel);
+        }
+
+        public async Task<IActionResult> Details(int bestellingId)
+        {
+            var bestelling = await _context.Bestellingen
+                .Include(b => b.Items)
+                    .ThenInclude(i => i.Produkt)
+                .FirstOrDefaultAsync(b => b.BestellingId == bestellingId);
+
+            if (bestelling == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new BestellingViewModel
+            {
+                BestellingId = bestelling.BestellingId,
+                GebruikerNaam = bestelling.UserId,
+                BestelDatum = bestelling.BestelDatum,
+                Items = bestelling.Items.Select(i => new WinkelmandjeItemViewModel
+                {
+                    ProductId = i.ProduktProductID,
+                    ProductNaam = i.Produkt.ProduktNaam,
+                    Aantal = i.Aantal,
+                    Prijs = i.PrijsPerStuk
+                }).ToList(),
+                TotaalPrijs = bestelling.Items.Sum(i => i.Aantal * i.PrijsPerStuk),
+                IsBetaald = bestelling.IsBetaald,
+                IsGeannuleerd = bestelling.IsGeannuleerd
+            };
+
+            return View(viewModel);
         }
     }
 }

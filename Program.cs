@@ -53,7 +53,7 @@ app.MapAreaControllerRoute(
 app.MapAreaControllerRoute(
     name: "Employee_area",
     areaName: "Employee",
-    pattern: "Employee/{controller=Home}/{action=Index}/{id?}"
+    pattern: "Employee/{controller=BestellingOverzicht}/{action=OpenBestellingen}/{id?}"
 );
 
 app.MapAreaControllerRoute(

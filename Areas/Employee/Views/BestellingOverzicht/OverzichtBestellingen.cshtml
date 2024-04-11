@@ -1,0 +1,69 @@
+﻿@model List<TheBreadPit.Areas.Employee.Models.BestellingDetail>
+
+<h2>Bestelling Overzicht</h2>
+<form id="searchForm" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="searchQuery" placeholder="Zoek op gebruikersnaam" value="@ViewBag.CurrentFilter" style="width: 200px" >
+        <div class="form-check form-check-inline" style="margin-left: 20px;margin-top: 7px">
+            <input class="form-check-input" type="radio" name="statusFilter" id="all" value="" onchange="submitForm()">
+            <label class="form-check-label" for="all">Alle</label>
+        </div>
+        <div class="form-check form-check-inline" style="margin-left: 20px;margin-top: 7px">
+            <input class="form-check-input" type="radio" name="statusFilter" id="afgerond" value="afgerond" onchange="submitForm()">
+            <label class="form-check-label" for="afgerond">Afgerond</label>
+        </div>
+        <div class="form-check form-check-inline" style="margin-left: 20px; margin-top: 7px">
+            <input class="form-check-input" type="radio" name="statusFilter" id="nietAfgerond" value="nietAfgerond" onchange="submitForm()">
+            <label class="form-check-label" for="nietAfgerond">Niet afgerond</label>
+        </div>
+    </div>
+</form>
+
+<script>
+    function submitForm() {
+        event.preventDefault();
+        document.getElementById("searchForm").submit();
+    }
+
+    window.onload = function () {
+        var selectedFilter = document.querySelector('input[name="statusFilter"]:checked').value;
+
+        if (selectedFilter === "afgerond") {
+            document.getElementById("afgerond").checked = true;
+        } else if (selectedFilter === "nietAfgerond") {
+            document.getElementById("nietAfgerond").checked = true;
+        }
+    };
+</script>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Bestelling ID</th>
+            <th>Gebruikersnaam</th>
+            <th>Besteldatum</th>
+            <th>Totaalprijs</th>
+            <th>Status</th>
+            <th>Actie</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var bestelling in Model)
+    {
+        <tr>
+            <td>@bestelling.BestellingId</td>
+            <td>@bestelling.GebruikersNaam</td>
+            <td>@bestelling.BestelDatum.ToString("d")</td>
+            <td>@bestelling.TotaalPrijs.ToString("C")</td>
+            <td>@(bestelling.IsAfgerond ? "Afgerond" : "Niet afgerond")</td>
+            <td>
+                <form asp-action="ToggleStatus" method="post">
+                    <input type="hidden" name="bestellingId" value="@bestelling.BestellingId" />
+                    <button type="submit" class="btn" style="background-color:@(bestelling.IsAfgerond ? "#ffd800" : "#90ee90"); color:black">
+                        @(bestelling.IsAfgerond ? "Markeer als niet afgerond" : "Markeer als afgerond")
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

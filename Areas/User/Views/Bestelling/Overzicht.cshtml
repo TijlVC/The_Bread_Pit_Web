@@ -30,29 +30,29 @@
     </table>
 
     <h3>Totaal: @Model.TotaalPrijs.ToString("C")</h3>
-    < br />
-    <p>
-        Geplaatst door :
-        <br />
-        @Model.GebruikerNaam op @Model.BestelDatum.ToString("dd-MM-yyyy")
-    </p>
+    <p>Geplaatst door :  @Model.GebruikerNaam op @Model.BestelDatum.ToString("dd-MM-yyyy")</p>
 }
 else
 {
     <p>Er zijn geen items in deze bestelling.</p>
 }
+<div class="row">
+    <div class="col text-left">
+        @if (!Model.IsBetaald && !Model.IsGeannuleerd)
+        {
+            <form asp-action="MarkeerAlsBetaald" asp-route-bestellingId="@Model.BestellingId" method="post">
+                <button type="submit" class="btn btn-success">Markeer als betaald</button>
+            </form>
+        }
+    </div>
+    <div class="col text-right">
+        @if (!Model.IsGeannuleerd)
+        {
+            <form asp-action="AnnuleerBestelling" asp-route-bestellingId="@Model.BestellingId" method="post">
+                <button type="submit" class="btn btn-warning">Annuleer Bestelling</button>
+            </form>
+        }
+    </div>
+</div>
 
-@if (!Model.IsBetaald && !Model.IsGeannuleerd)
-{
-    <form asp-action="MarkeerAlsBetaald" asp-route-bestellingId="@Model.BestellingId" method="post">
-        <button type="submit" class="btn btn-success">Markeer als betaald</button>
-    </form>
-}
-
-@if (!Model.IsGeannuleerd)
-{
-    <form asp-action="AnnuleerBestelling" asp-route-bestellingId="@Model.BestellingId" method="post">
-        <button type="submit" class="btn btn-warning">Annuleer Bestelling</button>
-    </form>
-}
 

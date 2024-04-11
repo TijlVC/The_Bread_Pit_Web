@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using The_Bread_Pit.Models;
 
-namespace The_Bread_Pit.Areas.User.Models
+namespace The_Bread_Pit.Models
 {
     public class BestelItem
     {

@@ -12,6 +12,7 @@ namespace The_Bread_Pit.Areas.User.Models
         public decimal TotaalPrijs { get; set; }
         public bool IsBetaald { get; set; }
         public bool IsGeannuleerd { get; set; }
+        public decimal Totaal { get; set; }
     }
 
     public class WinkelmandjeItemViewModel

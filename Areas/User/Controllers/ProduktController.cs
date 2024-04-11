@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using The_Bread_Pit.Models;
 using System.Linq;
-using Microsoft.AspNetCore.Authorization;
 
 namespace The_Bread_Pit.Areas.User.Controllers
 {
     [Area("User")]
-    [Authorize(Roles = "User")]
     public class ProduktController : Controller
     {
         private TheBreadPitContext context;

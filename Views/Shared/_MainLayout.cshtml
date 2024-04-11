@@ -7,7 +7,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <span class="navbar-brand" asp-area="" asp-controller="" asp-action="">The Bread Pit</span>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">The Bread Pit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,10 +22,9 @@
                     <li class="nav-item">
                         <a class="nav-link
                                @(controller == "Home" && action == "About" ? "active" : "")"
-                           asp-controller="Home" asp-action="About">Over Ons</a>
+                           asp-controller="Home" asp-action="Index">Over Ons</a>
                     </li>
-                </ul>
-@*                     <li class="nav-item ms-auto">
+                    <li class="nav-item ms-auto">
                         <a class="nav-link" 
                             asp-area="User" asp-controller="Produkt" asp-action="List">User Area</a>
                     </li>
@@ -36,11 +35,6 @@
                     <li class="nav-item ms-auto">
                         <a class="nav-link"
                            asp-area="Admin" asp-controller="Produkt" asp-action="List">Admin Area</a>
-                    </li> 
-                 *@
-                <ul class="navbar-nav ml-auto">
-                    <li>
-                        <partial name="_LoginPartial" />
                     </li>
                 </ul>
             </div>

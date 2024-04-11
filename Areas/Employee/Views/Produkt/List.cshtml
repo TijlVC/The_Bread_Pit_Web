@@ -28,7 +28,7 @@
                 @foreach (var produkt in Model.Produkten)
                 {
                     <tr>
-                        <td>@produkt.Omschrijving</td>
+                        <td>@produkt.ProduktNaam</td>
                         <td>@produkt.Prijs.ToString("c")</td>
                         <td>
                             <a asp-controller="Produkt" asp-action="Details" asp-route-id="@produkt.ProductID"

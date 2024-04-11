@@ -1,38 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\",
+  "WorkspaceRootPath": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\user\\models\\overzichtbestelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\models\\overzichtbestelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\controllers\\winkelmandjecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\controllers\\winkelmandjecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\admin\\controllers\\bestellingoverzichtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\admin\\controllers\\bestellingoverzichtcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\employee\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\employee\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\admin\\views\\bestellingoverzicht\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\admin\\views\\bestellingoverzicht\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\views\\shared\\_userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\views\\shared\\_userlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\admin\\models\\bestellingoverzichtmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\admin\\models\\bestellingoverzichtmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\views\\shared\\_mainlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:views\\shared\\_mainlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\admin\\views\\bestellingoverzicht\\overzichtbestellingen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\admin\\views\\bestellingoverzicht\\overzichtbestellingen.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\views\\winkelmandje\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\views\\winkelmandje\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\areas\\employee\\views\\produkt\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\employee\\views\\produkt\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\models\\bestelitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:models\\bestelitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit v5\\models\\bestelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:models\\bestelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\models\\thebreadpitcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:models\\thebreadpitcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\models\\winkelmandjeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\models\\winkelmandjeitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\controllers\\produktcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\controllers\\produktcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\views\\produkt\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\views\\produkt\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\areas\\user\\views\\produkt\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:areas\\user\\views\\produkt\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\the bread pit.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:the bread pit.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|c:\\electronica - ict\\visual studio 2022\\webdevelopment 2 -2024\\the bread pit\\the bread pit zonder autho\\migrations\\20240327110535_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42F78427-2D81-4D94-9841-48D1536138F1}|The Bread Pit.csproj|solutionrelative:migrations\\20240327110535_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,22 +70,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Views\\BestellingOverzicht\\Details.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BestellingOverzicht\\Details.cshtml",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Views\\BestellingOverzicht\\Details.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\BestellingOverzicht\\Details.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T20:49:10.288Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
@@ -76,100 +90,185 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OverzichtBestelling.cs",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\User\\Models\\OverzichtBestelling.cs",
-              "RelativeDocumentMoniker": "Areas\\User\\Models\\OverzichtBestelling.cs",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\User\\Models\\OverzichtBestelling.cs",
-              "RelativeToolTip": "Areas\\User\\Models\\OverzichtBestelling.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\Employee\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Employee\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\Employee\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Areas\\Employee\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T21:15:34.598Z",
+              "WhenOpened": "2024-03-28T12:40:21.43Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_UserLayout.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Shared\\_UserLayout.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Shared\\_UserLayout.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Shared\\_UserLayout.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Shared\\_UserLayout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-28T12:38:21.532Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BestellingOverzichtModel.cs",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Models\\BestellingOverzichtModel.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Models\\BestellingOverzichtModel.cs",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Models\\BestellingOverzichtModel.cs",
-              "RelativeToolTip": "Areas\\Admin\\Models\\BestellingOverzichtModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T20:24:03.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Employee\\Views\\Produkt\\List.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Employee\\Views\\Produkt\\List.cshtml",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Employee\\Views\\Produkt\\List.cshtml",
-              "RelativeToolTip": "Areas\\Employee\\Views\\Produkt\\List.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA5AAAA",
+              "Title": "_MainLayout.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Views\\Shared\\_MainLayout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_MainLayout.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Views\\Shared\\_MainLayout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_MainLayout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T20:03:17.129Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-28T12:20:41.813Z"
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BestellingOverzichtController.cs",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Controllers\\BestellingOverzichtController.cs",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\BestellingOverzichtController.cs",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Controllers\\BestellingOverzichtController.cs",
-              "RelativeToolTip": "Areas\\Admin\\Controllers\\BestellingOverzichtController.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAowG0AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T19:24:41.613Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Bestelling.cs",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Models\\Bestelling.cs",
-              "RelativeDocumentMoniker": "Models\\Bestelling.cs",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Models\\Bestelling.cs",
-              "RelativeToolTip": "Models\\Bestelling.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "TheBreadPitContext.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Models\\TheBreadPitContext.cs",
+              "RelativeDocumentMoniker": "Models\\TheBreadPitContext.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Models\\TheBreadPitContext.cs",
+              "RelativeToolTip": "Models\\TheBreadPitContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T20:54:39.529Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-27T10:26:49.679Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "BestelItem.cs",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Models\\BestelItem.cs",
-              "RelativeDocumentMoniker": "Models\\BestelItem.cs",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Models\\BestelItem.cs",
-              "RelativeToolTip": "Models\\BestelItem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-27T09:28:01.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAYwDQAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-08T20:54:32.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-20T17:57:59.052Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OverzichtBestellingen.cshtml",
-              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Views\\BestellingOverzicht\\OverzichtBestellingen.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\BestellingOverzicht\\OverzichtBestellingen.cshtml",
-              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit V5\\Areas\\Admin\\Views\\BestellingOverzicht\\OverzichtBestellingen.cshtml",
-              "RelativeToolTip": "Areas\\Admin\\Views\\BestellingOverzicht\\OverzichtBestellingen.cshtml",
-              "ViewState": "AQIAADcAAAAAAAAAAAAgwF0AAABIAAAA",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Winkelmandje\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Winkelmandje\\Index.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Winkelmandje\\Index.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Winkelmandje\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-08T19:24:44.166Z",
+              "WhenOpened": "2024-03-28T12:25:10.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WinkelmandjeItem.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Models\\WinkelmandjeItem.cs",
+              "RelativeDocumentMoniker": "Areas\\User\\Models\\WinkelmandjeItem.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Models\\WinkelmandjeItem.cs",
+              "RelativeToolTip": "Areas\\User\\Models\\WinkelmandjeItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T12:17:53.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WinkelmandjeController.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Controllers\\WinkelmandjeController.cs",
+              "RelativeDocumentMoniker": "Areas\\User\\Controllers\\WinkelmandjeController.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Controllers\\WinkelmandjeController.cs",
+              "RelativeToolTip": "Areas\\User\\Controllers\\WinkelmandjeController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAhwCwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T12:16:42.159Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProduktController.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Controllers\\ProduktController.cs",
+              "RelativeDocumentMoniker": "Areas\\User\\Controllers\\ProduktController.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Controllers\\ProduktController.cs",
+              "RelativeToolTip": "Areas\\User\\Controllers\\ProduktController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAkwCwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-28T12:23:32.914Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-28T12:21:19.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Produkt\\List.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Produkt\\List.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Produkt\\List.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Produkt\\List.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-28T12:22:24.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Produkt\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\User\\Views\\Produkt\\Details.cshtml",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Areas\\User\\Views\\Produkt\\Details.cshtml",
+              "RelativeToolTip": "Areas\\User\\Views\\Produkt\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-28T12:22:35.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "The Bread Pit.csproj",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\The Bread Pit.csproj",
+              "RelativeDocumentMoniker": "The Bread Pit.csproj",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\The Bread Pit.csproj",
+              "RelativeToolTip": "The Bread Pit.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-28T09:51:32.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20240327110535_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Migrations\\20240327110535_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240327110535_InitialCreate.cs",
+              "ToolTip": "C:\\Electronica - ICT\\Visual Studio 2022\\Webdevelopment 2 -2024\\The Bread Pit\\The Bread Pit zonder autho\\Migrations\\20240327110535_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20240327110535_InitialCreate.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-27T11:05:35.829Z"
             }
           ]
         }

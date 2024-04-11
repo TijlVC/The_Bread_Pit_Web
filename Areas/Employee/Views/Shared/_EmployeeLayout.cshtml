@@ -7,7 +7,7 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <span class="navbar-brand" asp-area="" asp-controller="" asp-action="">The Bread Pit</span>
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">The Bread Pit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -16,31 +16,13 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
                         <a class="nav-link
-                               @(controller == "BestellingOverzicht" ? "active" : "")" asp-area="Employee"
-                           asp-controller="BestellingOverzicht" asp-action="OpenBestellingen">Open bestellingen</a>
-                    <li class="nav-item">
-                        <a class="nav-link
-                               @(controller == "BestellingOverzicht" ? "active" : "")" asp-area="Employee"
-                           asp-controller="BestellingOverzicht" asp-action="OverzichtBestellingen">Samenvatting Bestellingen</a>
+                               @(controller == "Produkt" ? "active" : "")" asp-area="Employee"
+                           asp-controller="Produkt" asp-action="List">Produkten</a>
                     </li>
-                    </li>
-                                        <li class="nav-item">
-                        <a class="nav-link
-                               @(controller == "BestellingOverzicht" ? "active" : "")" asp-area="Employee"
-                           asp-controller="BestellingOverzicht" asp-action="AfgerondeBestellingen">Afgeronde bestellingen</a>
-                    </li>
-@*                     <li class="nav-item ms-auto">
+                    <li class="nav-item ms-auto">
                         <a class="nav-link
                                @(controller == "Home" && action == "Index" ? "active" : "")" asp-area=""
                            asp-controller="Home" asp-action="Index">Back to main site</a>
-                    </li> *@
-                    <li class="nav-item">
-                        <a class="nav-link
-                               @(controller == "Produkt" ? "active" : "")" asp-area="Employee"
-                           asp-controller="Produkt" asp-action="List">Produkten</a>
-                    </li>                   
-                    <li class ="nav-item ms-auto">
-                        <partial name="_LoginPartial" />
                     </li>
                 </ul>
             </div>

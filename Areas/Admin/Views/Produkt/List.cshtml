@@ -21,8 +21,7 @@
             <thead>
                 <tr>
                     <th>Naam</th>
-                    <th>Omschrijving</th>
-                    <th class="text-center">Prijs</th>
+                    <th>Prijs</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,17 +29,15 @@
                 {
                     <tr>
                         <td>@produkt.ProduktNaam</td>
-                        <td>@produkt.Omschrijving</td>
-                        <td class="text-center">@produkt.Prijs.ToString("c")</td>
-                        <td class="text-center">
-                            <a asp-controller="Produkt" asp-action="Edit" asp-route-id="@produkt.ProductID" class="btn btn-warning">
-                                Gegevens aanpassen <i class="fas fa-pencil-alt" aria-hidden="true"></i>
-                            </a>
+                        <td>@produkt.Prijs.ToString("c")</td>
+                        <td>
+                            <a asp-controller="Produkt" asp-action="Edit" asp-route-id="@produkt.ProductID"
+                               class="btn btn-warning">Gegevens editeren</a>
+
                         </td>
-                        <td class="text-center">
-                            <a asp-controller="Produkt" asp-action="Delete" asp-route-id="@produkt.ProductID" class="btn btn-danger">
-                                Verwijderen <i class="fas fa-trash-alt" aria-hidden="true"></i>
-                            </a>
+                        <td>
+                            <a asp-controller="Produkt" asp-action="Delete" asp-route-id="@produkt.ProductID"
+                               class="btn btn-danger">verwijderen</a>
                         </td>
                     </tr>
                 }

@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using The_Bread_Pit.Models;
-using Microsoft.AspNetCore.Identity;
-using The_Bread_Pit.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,10 +10,6 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TheBreadPitContext>(
     options => options.UseSqlServer(
         builder.Configuration.GetConnectionString("TheBreadPitContext")));
-
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //deze op fasle zetten om bij userregistratie geen 'bevstiging te moeten sturen)
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<TheBreadPitContext>();
 
 // Sessie configuratie
 builder.Services.AddSession(options =>
@@ -33,14 +27,13 @@ var app = builder.Build();
 // Middleware voor statische bestanden
 app.UseStaticFiles();
 
-// Middleware voor sessies; belangrijk om dit vï¿½ï¿½r app.UseRouting() en na app.UseStaticFiles() te plaatsen
+// Middleware voor sessies; belangrijk om dit vóór app.UseRouting() en na app.UseStaticFiles() te plaatsen
 app.UseSession();
 
 // Middleware voor routing
 app.UseRouting();
 
 app.UseStatusCodePages();
-app.UseAuthentication();;
 
 // Middleware voor autorisatie
 app.UseAuthorization();
@@ -53,7 +46,7 @@ app.MapAreaControllerRoute(
 app.MapAreaControllerRoute(
     name: "Employee_area",
     areaName: "Employee",
-    pattern: "Employee/{controller=BestellingOverzicht}/{action=OpenBestellingen}/{id?}"
+    pattern: "Employee/{controller=Home}/{action=Index}/{id?}"
 );
 
 app.MapAreaControllerRoute(
@@ -66,16 +59,6 @@ app.MapAreaControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}/{url?}");
-
-var scope = app.Services.CreateScope();
-var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
-var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-await DbInitializer.InitializeAsync(userManager, roleManager);
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapRazorPages();
-});
 
 app.Run();
 

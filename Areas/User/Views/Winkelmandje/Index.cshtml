@@ -1,8 +1,12 @@
-﻿@model List<The_Bread_Pit.Areas.User.Models.WinkelmandjeItem>
+﻿@using The_Bread_Pit.Areas.User.Models
 
 <h2>Mijn Winkelmandje</h2>
 
-@if (Model.Any())
+@if (Model.Count == 0)
+{
+    <p>Uw winkelmandje is leeg.</p>
+}
+else
 {
     <table class="table">
         <thead>
@@ -10,7 +14,8 @@
                 <th>Productnaam</th>
                 <th>Aantal</th>
                 <th>Prijs per stuk</th>
-                <th>Subtotaal</th>
+                <th>Totale prijs</th>
+                <th>Actie</th>
             </tr>
         </thead>
         <tbody>
@@ -19,50 +24,27 @@
                 <tr>
                     <td>@item.Produkt.ProduktNaam</td>
                     <td>
-                        <form method="post" asp-action="UpdateQuantity" asp-controller="Winkelmandje" asp-route-itemId="@item.WinkelmandjeItemID" asp-route-action="minus" class="d-inline">
-                            <button type="submit">
-                                <i class="fas fa-minus"></i>
-                            </button>
+                        <form method="post" action="/Winkelmandje/UpdateQuantity" class="quantity-form">
+                            <input type="hidden" name="action" value="minus" />
+                            <input type="hidden" name="itemId" value="@item.WinkelmandjeItemID" />
+                            <button type="submit" class="btn btn-custom btn-sm">-</button>
                         </form>
                         @item.Aantal
-                        <form method="post" asp-action="UpdateQuantity" asp-controller="Winkelmandje" asp-route-itemId="@item.WinkelmandjeItemID" asp-route-action="plus" class="d-inline">
-                            <button type="submit" >
-                                <i class="fas fa-plus"></i>
-                            </button>
+                        <form method="post" action="/Winkelmandje/UpdateQuantity" class="quantity-form">
+                            <input type="hidden" name="action" value="plus" />
+                            <input type="hidden" name="itemId" value="@item.WinkelmandjeItemID" />
+                            <button type="submit" class="btn btn-custom btn-sm">+</button>
                         </form>
                     </td>
                     <td>@item.Produkt.Prijs.ToString("C")</td>
                     <td>@((item.Aantal * item.Produkt.Prijs).ToString("C"))</td>
-                    <td class="col text-right">
-                        <form method="post" asp-action="Verwijder" asp-controller="Winkelmandje" asp-route-itemId="@item.WinkelmandjeItemID" class="d-inline">
-                            <button type="submit" class="btn btn-danger btn-sm">Verwijderen</button>
+                    <td>
+                        <form method="post" asp-action="Verwijder" asp-controller="Winkelmandje" asp-route-itemId="@item.WinkelmandjeItemID">
+                            <button type="submit" class="btn btn-danger">Verwijderen</button>
                         </form>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-
-    <div class="row">
-        <div class="col text-right">
-            <h3>Totaal: @Model.Sum(i => i.Aantal * i.Produkt.Prijs).ToString("C")</h3>
-        </div>
-    </div>
-        
-    <div class="row">
-        <div class="col text-left">
-            <a asp-area="User" asp-controller="Produkt" asp-action="List" class="btn btn-info">Ga terug naar produkten</a>
-        </div>
-        <div class="col text-right">
-            <form asp-area="User" asp-controller="Bestelling" asp-action="PlaatsBestelling" method="post">
-                <button type="submit" class="btn btn-outline-primary">Druk hier om u bestelling te plaatsen</button>
-            </form>
-        </div>
-    </div>
-   
-}
-else
-{
-    <p>Uw winkelmandje is leeg.</p>
-    <a asp-area="User" asp-controller="Produkt" asp-action="List" class="btn btn-outline-primary">Bekijk onze producten</a>
 }

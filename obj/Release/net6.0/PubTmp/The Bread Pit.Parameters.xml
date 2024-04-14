@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="TheBreadPitWeb" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Electronica\ -\ ICT\\Visual\ Studio\ 2022\\Webdevelopment\ 2\ -2024\\The\ Bread\ Pit\\The\ Bread\ Pit\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

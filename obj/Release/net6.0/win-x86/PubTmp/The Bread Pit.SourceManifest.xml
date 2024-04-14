@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit Final\obj\Release\net6.0\win-x86\PubTmp\Out\" />
-  <dbfullsql path="C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit Final\obj\Release\net6.0\win-x86\PubTmp\EFSQLScripts\The_Bread_Pit.Models.TheBreadPitContext.sql" />
+  <IisApp path="C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit V7\obj\Release\net6.0\win-x86\PubTmp\Out\" />
+  <dbfullsql path="C:\Electronica - ICT\Visual Studio 2022\Webdevelopment 2 -2024\The Bread Pit\The Bread Pit V7\obj\Release\net6.0\win-x86\PubTmp\EFSQLScripts\The_Bread_Pit.Models.TheBreadPitContext.sql" />
 </sitemanifest>

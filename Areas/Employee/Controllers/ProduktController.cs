@@ -10,10 +10,12 @@ namespace The_Bread_Pit.Areas.Employee.Controllers
     public class ProduktController : Controller
     {
         private TheBreadPitContext context;
+        private IWebHostEnvironment? _environment;
 
-        public ProduktController(TheBreadPitContext context)
+        public ProduktController(TheBreadPitContext context, IWebHostEnvironment environment)
         {
             this.context = context;
+            _environment = environment;
         }
         public IActionResult Index()
         {
@@ -34,9 +36,17 @@ namespace The_Bread_Pit.Areas.Employee.Controllers
                 }
             }
 
-            string imageFileName = produkt?.Omschrijving + "-m.jpg";
-            ViewBag.CategoryName = categoryNaam;
-            ViewBag.ImageFileName = imageFileName;
+            string fileName = $"{produkt?.ProduktNaam.Replace(" ", "")}.jpeg";
+            string webImagePath = $"/images/Produkten/{fileName}";
+
+            string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
+            if (!System.IO.File.Exists(physicalPath))
+            {
+                webImagePath = "/images/Produkten/thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+            }
+
+            // Gebruik alleen de relatieve pad voor de afbeelding bron in de view
+            ViewBag.ImagePath = webImagePath;
 
             return View(produkt);
         }

@@ -11,11 +11,13 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     public class ProduktController : Controller
     {
-        private readonly TheBreadPitContext _context;
+        private TheBreadPitContext _context;
+        private IWebHostEnvironment _environment;
 
-        public ProduktController(TheBreadPitContext context)
+        public ProduktController(TheBreadPitContext context, IWebHostEnvironment environment)
         {
             _context = context;
+            _environment = environment;
         }
 
         public IActionResult Index()
@@ -78,53 +80,80 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Produkt produkt) // POST voor zowel Add als Edit
+        public async Task<IActionResult> Add(Produkt produkt)
         {
-
-
             if (ModelState.IsValid)
             {
+                if (produkt.File != null)
+                {
+                    string uploadsFolder = Path.Combine(_environment.WebRootPath, "images", "Produkten");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + produkt.File.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await produkt.File.CopyToAsync(fileStream);
+                    }
+                    produkt.ImagePath = uniqueFileName;
+                }
+                else
+                {
+                    // Default image if no image is provided
+                    produkt.ImagePath = "TheBreadPit.jpg";
+                }
+
                 _context.Produkten.Add(produkt);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
                 return RedirectToAction("List");
             }
+            ViewBag.Categorieen = _context.Categorien.ToList(); // Reload categories for the form
             return View(produkt);
         }
 
         [HttpGet]
-        public IActionResult Edit(int? id) // Gecombineerd Add en Edit in één actie
+        public IActionResult Edit(int id)
         {
-
-            // Ophalen van alle categorieën uit de database en instellen in de ViewBag voorafgaand aan andere logica
-            ViewBag.Categorieen = _context.Categorien.ToList();
-
-            if (id.HasValue)
+            var produkt = _context.Produkten.Find(id);
+            if (produkt == null)
             {
-                var produkt = _context.Produkten.Find(id.Value);
-                if (produkt != null)
-                {
-                    // Als het product bestaat, stuur het naar de view
-                    return View(produkt);
-                }
+                return NotFound();
             }
 
-            // Als er geen id is opgegeven of het product niet gevonden kan worden, stuur dan een nieuw product naar de view
-            // Nu met de zekerheid dat ViewBag.Categorieen is ingesteld
-            return View(new Produkt());
+            string fileName = $"{produkt.ProduktNaam.Replace(" ", "").Replace("/", "-")}.jpeg";
+            string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
+            if (!System.IO.File.Exists(physicalPath))
+            {
+                fileName = "thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+            }
+
+            ViewBag.ImagePath = $"/images/Produkten/{fileName}";
+            ViewBag.Categorieen = _context.Categorien.ToList(); // Stuur de lijst met categorieën naar de view
+
+            return View(produkt);
         }
 
 
         [HttpPost]
-        public IActionResult Edit(Produkt produkt)
+        [HttpPost]
+        public async Task<IActionResult> Edit(Produkt produkt)
         {
             if (ModelState.IsValid)
             {
-                _context.Produkten.Update(produkt);
-                _context.SaveChanges();
+                if (produkt.File != null)
+                {
+                    string uploadsFolder = Path.Combine(_environment.WebRootPath, "images", "Produkten");
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + produkt.File.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await produkt.File.CopyToAsync(fileStream);
+                    }
+                    produkt.ImagePath = uniqueFileName;
+                }
+
+                _context.Update(produkt);
+                await _context.SaveChangesAsync();
                 return RedirectToAction("List");
             }
-
-            // Er zijn fouten in het model
             ViewBag.Categorieen = _context.Categorien.ToList();
             return View(produkt);
         }

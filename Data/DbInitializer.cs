@@ -3,6 +3,7 @@
 
     using Microsoft.AspNetCore.Identity;
     using System.Threading.Tasks;
+    using The_Bread_Pit.Models;
 
     public static class DbInitializer
     {
@@ -45,6 +46,36 @@
                 {
                     await userManager.AddToRoleAsync(user, role);
                 }
+            }
+        }
+
+        private static void SeedProducts(TheBreadPitContext context)
+        {
+            if (!context.Produkten.Any())
+            {
+                context.Produkten.AddRange(
+                    new Produkt
+                    {
+                        ProduktNaam = "Panini",
+                        Prijs = 5.00M,
+                        Omschrijving = "Heerlijk Italiaans broodje",
+                        Allergieën = "Bevat gluten",
+                        Extra = "Ook verkrijgbaar met extra kaas",
+                        CategoryID = 1, // Zorg dat dit ID overeenkomt met een bestaande categorie
+                        ImagePath = "default.jpg"
+                    },
+                    new Produkt
+                    {
+                        ProduktNaam = "Donut",
+                        Prijs = 2.50M,
+                        Omschrijving = "Zoete traktatie met glazuur",
+                        Allergieën = "Bevat gluten en noten",
+                        Extra = "Verkrijgbaar in verschillende smaken",
+                        CategoryID = 2,
+                        ImagePath = "default.jpg"
+                    }
+                );
+                context.SaveChanges();
             }
         }
     }

@@ -25,5 +25,9 @@ namespace The_Bread_Pit.Models
         [Required(ErrorMessage = "Gelieve een categorie te selecteren")]
         public int CategoryID { get; set; }
         public Categorie? Categorie { get; set; }
+
+        [NotMapped]
+        public IFormFile File { get; set; }
+        public string ImagePath { get; set; }
     }
 }

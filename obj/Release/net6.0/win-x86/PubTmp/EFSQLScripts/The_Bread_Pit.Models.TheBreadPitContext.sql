@@ -563,3 +563,374 @@ GO
 COMMIT;
 GO
 
+BEGIN TRANSACTION;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    ALTER TABLE [Produkten] ADD [ImagePath] nvarchar(max) NOT NULL DEFAULT N'';
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    DECLARE @var3 sysname;
+    SELECT @var3 = [d].[name]
+    FROM [sys].[default_constraints] [d]
+    INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+    WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Bestellingen]') AND [c].[name] = N'UserId');
+    IF @var3 IS NOT NULL EXEC(N'ALTER TABLE [Bestellingen] DROP CONSTRAINT [' + @var3 + '];');
+    ALTER TABLE [Bestellingen] ALTER COLUMN [UserId] nvarchar(450) NOT NULL;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''soep.jpeg'', [Omschrijving] = N''Soep van de dag (zie bord)''
+    WHERE [ProductID] = 1;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''stokbrood.jpeg'', [Omschrijving] = N''Stuk stokbrood (20cm)''
+    WHERE [ProductID] = 2;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Boter.jpeg''
+    WHERE [ProductID] = 3;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''CeasarSalad.jpeg''
+    WHERE [ProductID] = 4;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''PastaKlein.jpeg'', [Omschrijving] = N''Pasta 4 kazen klein'', [ProduktNaam] = N''Pasta Klein''
+    WHERE [ProductID] = 5;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''PastaGroot.jpeg'', [Omschrijving] = N''Pasta 4 kazen Groot'', [ProduktNaam] = N''Pasta Groot''
+    WHERE [ProductID] = 6;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Panini.jpeg''
+    WHERE [ProductID] = 7;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeKaas.jpg'', [Omschrijving] = N''Belegd Broodje met kaas'', [ProduktNaam] = N''Broodje Kaas''
+    WHERE [ProductID] = 8;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeHam.jpeg'', [Omschrijving] = N''Belegd broodje metham'', [ProduktNaam] = N''Broodje Ham''
+    WHERE [ProductID] = 9;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeKaas-Ham.jpeg'', [Omschrijving] = N''Belegd Broodje met kaas/ham'', [ProduktNaam] = N''Broodje Kaas - Ham''
+    WHERE [ProductID] = 10;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjePrepare.jpeg''
+    WHERE [ProductID] = 11;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Smoske.jpeg'', [Omschrijving] = N''Smoske''
+    WHERE [ProductID] = 12;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeKipCurry.jpeg'', [Omschrijving] = N''Belegd Broodje met kip curry'', [ProduktNaam] = N''Broodje Kip Curry''
+    WHERE [ProductID] = 13;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeSurimi.jpeg'', [Omschrijving] = N''Belegd Broodje met surimi'', [ProduktNaam] = N''Broodje Surimi''
+    WHERE [ProductID] = 14;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeGerookteHam.jpeg'', [Omschrijving] = N''Belegd Broodje met gerookte ham'', [ProduktNaam] = N''Broodje Gerookte Ham''
+    WHERE [ProductID] = 15;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BroodjeGerookteZalm.jpeg'', [Omschrijving] = N''Belegd Broodje met gerookte zalm'', [ProduktNaam] = N''Broodje Gerookte Zalm''
+    WHERE [ProductID] = 16;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''StukjeFruit.jpeg'', [Omschrijving] = N''Stuk fruit (Appel, Peer, Banaan, 2x kiwi)''
+    WHERE [ProductID] = 17;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''PotjeYogurt.jpeg'', [Omschrijving] = N''Potje yogurt''
+    WHERE [ProductID] = 18;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''HomeMadeDessert.jpeg''
+    WHERE [ProductID] = 19;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''FoodbaryBerry.jpeg'', [Omschrijving] = N''Foodbar - Crazy Berry'', [ProduktNaam] = N''Foodbar Berry''
+    WHERE [ProductID] = 20;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''FoodbarHealt.jpeg'', [Omschrijving] = N''Foodbar - Good Food'', [ProduktNaam] = N''Foodbar Healt''
+    WHERE [ProductID] = 21;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Muffin-Donut.jpeg'', [Omschrijving] = N''Muffin of Donut'', [ProduktNaam] = N''Muffin - Donut''
+    WHERE [ProductID] = 22;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Gebak.jpeg'', [Omschrijving] = N''Stukje gebak (zelf gebakken)'', [ProduktNaam] = N''Gebak''
+    WHERE [ProductID] = 23;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''DessertVoorverpaktDessert.jpeg'', [Omschrijving] = N''Dessert in voorverpakking'', [ProduktNaam] = N''Voorverpakt Dessert''
+    WHERE [ProductID] = 24;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Snoep.jpeg'', [Omschrijving] = N''Zakje Snoep''
+    WHERE [ProductID] = 25;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''KinderBueno.jpeg'', [ProduktNaam] = N''Kinder Bueno''
+    WHERE [ProductID] = 26;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Chips.jpeg'', [Omschrijving] = N''Zakje Chips'', [ProduktNaam] = N''Chips''
+    WHERE [ProductID] = 27;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Chocolade.jpeg'', [Omschrijving] = N''Reep Chocolade'', [ProduktNaam] = N''Chocolade''
+    WHERE [ProductID] = 28;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Smoothie.jpeg''
+    WHERE [ProductID] = 29;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Chaudefontaine.jpeg''
+    WHERE [ProductID] = 30;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Chaudefontaine.jpeg''
+    WHERE [ProductID] = 31;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Cola.jpeg'', [ProduktNaam] = N''Cola''
+    WHERE [ProductID] = 32;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Fanta.jpeg'', [ProduktNaam] = N''Fanta''
+    WHERE [ProductID] = 33;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Sprite.jpeg'', [ProduktNaam] = N''Sprite''
+    WHERE [ProductID] = 34;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''LiptonIce-Tea.jpeg'', [ProduktNaam] = N''Lipton Ice-Tea''
+    WHERE [ProductID] = 35;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Appelsiensap.jpeg'', [ProduktNaam] = N''Appelsiensap''
+    WHERE [ProductID] = 36;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Appelsap.jpeg'', [ProduktNaam] = N''Appelsap''
+    WHERE [ProductID] = 37;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Cécémel.jpeg'', [ProduktNaam] = N''Cécémel''
+    WHERE [ProductID] = 38;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''BlikjeNalu.jpeg'', [Omschrijving] = N''Nalu (0.25L)'', [ProduktNaam] = N''Blikje Nalu''
+    WHERE [ProductID] = 39;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''Red-Bull.jpeg'', [ProduktNaam] = N''Blikje Red-Bull''
+    WHERE [ProductID] = 40;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    EXEC(N'UPDATE [Produkten] SET [ImagePath] = N''ColdCoffeeToGo.jpeg'', [Omschrijving] = N''Cup koude kofie om mee te nemen'', [ProduktNaam] = N''Cold Coffee to Go''
+    WHERE [ProductID] = 41;
+    SELECT @@ROWCOUNT');
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    CREATE INDEX [IX_Bestellingen_UserId] ON [Bestellingen] ([UserId]);
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    ALTER TABLE [Bestellingen] ADD CONSTRAINT [FK_Bestellingen_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE;
+END;
+GO
+
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20240414151019_UpdateProduktenImage')
+BEGIN
+    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+    VALUES (N'20240414151019_UpdateProduktenImage', N'6.0.10');
+END;
+GO
+
+COMMIT;
+GO
+

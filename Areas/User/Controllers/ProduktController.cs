@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using The_Bread_Pit.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace The_Bread_Pit.Areas.User.Controllers
 {
@@ -10,10 +13,13 @@ namespace The_Bread_Pit.Areas.User.Controllers
     public class ProduktController : Controller
     {
         private TheBreadPitContext context;
+        private IWebHostEnvironment? _environment;
 
-        public ProduktController(TheBreadPitContext context)
+
+        public ProduktController(TheBreadPitContext context, IWebHostEnvironment environment)
         {
             this.context = context;
+            _environment = environment;
         }
         public IActionResult Index()
         {
@@ -34,12 +40,21 @@ namespace The_Bread_Pit.Areas.User.Controllers
                 }
             }
 
-            string imageFileName = produkt?.Omschrijving + "-m.jpg";
-            ViewBag.CategoryName = categoryNaam;
-            ViewBag.ImageFileName = imageFileName;
+            string fileName = $"{produkt?.ProduktNaam.Replace(" ", "")}.jpeg";
+            string webImagePath = $"/images/Produkten/{fileName}";
+
+            string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
+            if (!System.IO.File.Exists(physicalPath))
+            {
+                webImagePath = "/images/Produkten/thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+            }
+
+            // Gebruik alleen de relatieve pad voor de afbeelding bron in de view
+            ViewBag.ImagePath = webImagePath;
 
             return View(produkt);
         }
+
 
         [Route("[area]/Categorien/{id?}")]
         public IActionResult List(int? id) // Let op dat we nu een nullable int accepteren

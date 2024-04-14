@@ -20,7 +20,7 @@ namespace TheBreadPit.Areas.Admin.Controllers
             _context = context;
         }
 
-        // Geeft een overzicht van alle bestellingen
+        // Dit geeft een overzicht van alle bestellingen
         public async Task<IActionResult> OverzichtBestellingen(string searchQuery, string statusFilter)
         {
             ViewData["CurrentFilter"] = searchQuery;
@@ -50,7 +50,7 @@ namespace TheBreadPit.Areas.Admin.Controllers
                         .Select(b => new BestellingDetail
                 {
                     BestellingId = b.BestellingId,
-                    GebruikersNaam = b.User.UserName,  // Gebruik UserId als UserName niet direct beschikbaar is
+                    GebruikersNaam = b.User.UserName,
                     BestelDatum = b.BestelDatum,
                     TotaalPrijs = b.Items.Sum(i => i.Aantal * i.PrijsPerStuk),
                     IsAfgerond = b.IsAfgerond
@@ -122,7 +122,7 @@ namespace TheBreadPit.Areas.Admin.Controllers
                 item.Aantal = nieuwAantal;
                 await _context.SaveChangesAsync();
             }
-            return RedirectToAction("Details", new { id = item.BestellingId }); // Terug naar details
+            return RedirectToAction("Details", new { id = item.BestellingId });
         }
 
         [HttpPost]
@@ -136,7 +136,7 @@ namespace TheBreadPit.Areas.Admin.Controllers
                     BestellingId = bestellingId,
                     ProduktProductID = productId,
                     Aantal = aantal,
-                    PrijsPerStuk = product.Prijs // Aannemende dat 'Prijs' een veld is van 'Produkt'
+                    PrijsPerStuk = product.Prijs
                 };
 
                 _context.BestelItems.Add(bestelItem);

@@ -40,9 +40,7 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
                 }
                 else
                 {
-                    // Als de conversie faalt, toon dan mogelijk geen producten of handel anderszins af
-                    // Deze regel zorgt ervoor dat wanneer het ID niet overeenkomt met een bestaande categorie,
-                    // er geen producten worden teruggegeven.
+                    // Als het ophalen van de lijst met produkten niet lukt worden er geen producten getoond.
                     query = query.Where(p => false);
                 }
             }
@@ -97,15 +95,14 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
                 }
                 else
                 {
-                    // Default image if no image is provided
-                    produkt.ImagePath = "TheBreadPit.jpg";
+                    produkt.ImagePath = "TheBreadPit.jpg"; // Standaard afbeelding als de specifieke niet bestaat
                 }
 
                 _context.Produkten.Add(produkt);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("List");
             }
-            ViewBag.Categorieen = _context.Categorien.ToList(); // Reload categories for the form
+            ViewBag.Categorieen = _context.Categorien.ToList();
             return View(produkt);
         }
 
@@ -122,17 +119,15 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
             string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
             if (!System.IO.File.Exists(physicalPath))
             {
-                fileName = "thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+                fileName = "thebreadpit.jpeg";
             }
 
             ViewBag.ImagePath = $"/images/Produkten/{fileName}";
-            ViewBag.Categorieen = _context.Categorien.ToList(); // Stuur de lijst met categorieën naar de view
+            ViewBag.Categorieen = _context.Categorien.ToList();
 
             return View(produkt);
         }
 
-
-        [HttpPost]
         [HttpPost]
         public async Task<IActionResult> Edit(Produkt produkt)
         {
@@ -171,7 +166,7 @@ namespace The_Bread_Pit.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteConfirmed(int id) // Om naamgevingsconflicten te voorkomen
+        public IActionResult DeleteConfirmed(int id)
         {
             var produkt = _context.Produkten.Find(id);
             if (produkt != null)

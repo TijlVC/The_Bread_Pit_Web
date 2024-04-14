@@ -2,8 +2,6 @@ html {
   font-size: 14px;
 }
 
-
-
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -33,7 +31,7 @@ nav, footer {
 .quantity-form button {
     padding: 0px 8px;
     font-size: 1.1em;
-    vertical-align: middle; /* Aanpassing om de symbolen verticaal te centreren */
+    vertical-align: middle;
 }
 
 .btn-custom {
@@ -41,10 +39,8 @@ nav, footer {
     border-radius: 50px;
 }
 
-
-
 .row {
-    margin-top: 20px; /* Geeft wat ruimte boven de rij */
+    margin-top: 20px; 
 }
 
 .col.text-right {
@@ -60,8 +56,6 @@ nav, footer {
     color: #fff;
     
 }
-
-
 
 footer {    
     color: white;

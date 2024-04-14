@@ -19,7 +19,6 @@ namespace TheBreadPit.Areas.Employee.Controllers
             _context = context;
         }
 
-        // Geeft een overzicht van alle bestellingen
         public async Task<IActionResult> OverzichtBestellingen(string searchQuery, string statusFilter)
         {
             ViewData["CurrentFilter"] = searchQuery;
@@ -45,7 +44,7 @@ namespace TheBreadPit.Areas.Employee.Controllers
                         .Select(b => new BestellingDetail
                 {
                     BestellingId = b.BestellingId,
-                    GebruikersNaam = b.User.UserName,  // Gebruik UserId als UserName niet direct beschikbaar is
+                    GebruikersNaam = b.User.UserName,
                     BestelDatum = b.BestelDatum,
                     TotaalPrijs = b.Items.Sum(i => i.Aantal * i.PrijsPerStuk),
                     IsAfgerond = b.IsAfgerond
@@ -98,7 +97,7 @@ namespace TheBreadPit.Areas.Employee.Controllers
         {
             // Logica om alleen producten uit afgeronde bestellingen te halen
             var afgerondeSamenvatting = await _context.BestelItems
-                .Where(bi => bi.Bestelling.IsAfgerond) // Filter op afgeronde bestellingen
+                .Where(bi => bi.Bestelling.IsAfgerond)
                 .Include(bi => bi.Produkt)
                 .GroupBy(bi => bi.Produkt.ProduktNaam)
                 .Select(group => new ProductSamenvatting
@@ -115,7 +114,7 @@ namespace TheBreadPit.Areas.Employee.Controllers
                 TotalePrijs = afgerondeSamenvatting.Sum(p => p.Subtotaal)
             };
 
-            return View("AfgerondeBestellingen", viewModel); // Zorg ervoor dat de viewnaam overeenkomt
+            return View("AfgerondeBestellingen", viewModel);
         }
     }
 }

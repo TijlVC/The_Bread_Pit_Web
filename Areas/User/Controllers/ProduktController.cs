@@ -46,10 +46,9 @@ namespace The_Bread_Pit.Areas.User.Controllers
             string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
             if (!System.IO.File.Exists(physicalPath))
             {
-                webImagePath = "/images/Produkten/thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+                webImagePath = "/images/Produkten/thebreadpit.jpeg"; 
             }
 
-            // Gebruik alleen de relatieve pad voor de afbeelding bron in de view
             ViewBag.ImagePath = webImagePath;
 
             return View(produkt);
@@ -57,18 +56,18 @@ namespace The_Bread_Pit.Areas.User.Controllers
 
 
         [Route("[area]/Categorien/{id?}")]
-        public IActionResult List(int? id) // Let op dat we nu een nullable int accepteren
+        public IActionResult List(int? id) 
         {
             var categorien = context.Categorien.OrderBy(c => c.CategoryID).ToList();
             IQueryable<Produkt> query = context.Produkten;
 
-            if (id.HasValue) // Als er een ID is opgegeven
+            if (id.HasValue)
             {
                 query = query.Where(p => p.CategoryID == id.Value);
             }
             else
             {
-                query = query.Where(p => true); // Als er geen ID is, toon alle producten
+                query = query.Where(p => true); 
             }
 
             var produkten = query.OrderBy(x => x.ProductID).ToList();

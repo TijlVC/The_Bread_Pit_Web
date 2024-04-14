@@ -50,11 +50,10 @@ namespace The_Bread_Pit.Areas.User.Controllers
                     ProduktProductID = winkelmandjeItem.Produkt.ProductID,
                     Aantal = winkelmandjeItem.Aantal,
                     PrijsPerStuk = winkelmandjeItem.Produkt.Prijs
-                    // Zet hier eventuele andere benodigde eigenschappen
                 };
 
                 bestelling.Items.Add(bestelItem);
-                _context.WinkelmandjeItems.Remove(winkelmandjeItem); // Optioneel: Verwijder het item uit het winkelmandje
+                _context.WinkelmandjeItems.Remove(winkelmandjeItem);
             }
 
             _context.Bestellingen.Add(bestelling);
@@ -160,7 +159,7 @@ namespace The_Bread_Pit.Areas.User.Controllers
                 {
                     BestellingId = b.BestellingId,
                     BestelDatum = b.BestelDatum,
-                    Totaal = b.Items.Sum(i => i.Aantal * i.PrijsPerStuk), // Hier bereken je de totale prijs
+                    Totaal = b.Items.Sum(i => i.Aantal * i.PrijsPerStuk), // berekening totaal prijs
                     IsBetaald = b.IsBetaald,
                     IsGeannuleerd = b.IsGeannuleerd
                 })

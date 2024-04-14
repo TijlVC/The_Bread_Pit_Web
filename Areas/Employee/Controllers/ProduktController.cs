@@ -42,17 +42,14 @@ namespace The_Bread_Pit.Areas.Employee.Controllers
             string physicalPath = Path.Combine(_environment.WebRootPath, "images", "Produkten", fileName);
             if (!System.IO.File.Exists(physicalPath))
             {
-                webImagePath = "/images/Produkten/thebreadpit.jpeg"; // Standaard afbeelding als de specifieke niet bestaat
+                webImagePath = "/images/Produkten/thebreadpit.jpeg"; 
             }
 
-            // Gebruik alleen de relatieve pad voor de afbeelding bron in de view
             ViewBag.ImagePath = webImagePath;
 
             return View(produkt);
         }
 
-        //[Route("Categorien/{id?}")]
-        //[Route("[controller]s/{id}/")]
         [Route("[area]/Categorien/{id?}")]
         public IActionResult List(string id = "Alles")
         {
@@ -67,9 +64,6 @@ namespace The_Bread_Pit.Areas.Employee.Controllers
                 }
                 else
                 {
-                    // Als de conversie faalt, toon dan mogelijk geen producten of handel anderszins af
-                    // Deze regel zorgt ervoor dat wanneer het ID niet overeenkomt met een bestaande categorie,
-                    // er geen producten worden teruggegeven.
                     query = query.Where(p => false);
                 }
             }

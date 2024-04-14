@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("The Bread Pit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6fc840484b95e96e672a533a9092211df2cc94be")]
 [assembly: System.Reflection.AssemblyProductAttribute("The Bread Pit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("The Bread Pit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

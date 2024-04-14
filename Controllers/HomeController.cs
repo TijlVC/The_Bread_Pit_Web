@@ -9,7 +9,8 @@ namespace The_Bread_Pit.Controllers
 
         public IActionResult Index()
         {
-            HttpContext.Session.SetString("Init", "1"); // Zorgt ervoor dat een sessie-ID wordt gegenereerd en bewaard
+            // Zorgt ervoor dat een sessie-ID wordt gegenereerd en bewaard
+            HttpContext.Session.SetString("Init", "1"); 
             return View();
         }
 

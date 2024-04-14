@@ -76,12 +76,8 @@ public class AccountManagementController : Controller
         if (result.Succeeded)
         {
             await _userManager.AddToRoleAsync(user, role);
-            // Redirect of toon succesbericht
         }
-        else
-        {
-            // Toon foutberichten
-        }
+
         return View();
     }
 
@@ -96,7 +92,7 @@ public class AccountManagementController : Controller
             await _userManager.AddToRoleAsync(user, role);
             return RedirectToAction(nameof(Personeel));
         }
-        // Foutafhandeling
+
         return View();
     }
 
@@ -110,13 +106,9 @@ public class AccountManagementController : Controller
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
-                // Redirect of toon succesbericht
                 return RedirectToAction(nameof(Klanten));
             }
-            else
-            {
-                // Toon foutberichten
-            }
+
         }
         return RedirectToAction(nameof(Klanten));
     }
@@ -137,12 +129,11 @@ public class AccountManagementController : Controller
 
             if (!result.Succeeded)
             {
-                // Log de fouten of toon ze aan de gebruiker
+                // Toon fout aan de gebruiker
                 return View("Error", new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             }
         }
 
-        // Als alles succesvol was, toon dan de bevestigingspagina
         return View();
     }
 

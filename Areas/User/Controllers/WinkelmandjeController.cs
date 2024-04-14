@@ -28,11 +28,10 @@ namespace The_Bread_Pit.Areas.User.Controllers
             var product = _context.Produkten.Find(productId);
             if (product != null)
             {
-                // Verkrijg de UserId van de huidige ingelogde gebruiker
+                
                 var user = await _userManager.GetUserAsync(User);
                 var userId = user?.Id; // Dit zou de ID van de ingelogde gebruiker moeten zijn
 
-                // Veronderstelt dat de sessieId niet meer nodig is omdat je nu UserId gebruikt
                 var bestaandItem = _context.WinkelmandjeItems
                     .FirstOrDefault(w => w.Produkt.ProductID == productId && w.UserId == userId);
 
@@ -51,7 +50,7 @@ namespace The_Bread_Pit.Areas.User.Controllers
                 {
                     bestaandItem.Aantal++;
                 }
-                await _context.SaveChangesAsync(); // Gebruik await met SaveChangesAsync
+                await _context.SaveChangesAsync();
             }
             return RedirectToAction("Index");
         }
